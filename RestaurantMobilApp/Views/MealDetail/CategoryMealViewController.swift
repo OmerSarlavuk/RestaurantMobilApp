@@ -13,8 +13,9 @@ import UIView_Shimmer
 
 class CategoryMealViewController: UIViewController {
     
-    weak var coordinator: FirstViewCoordinatorProtocol?
+    weak var coordinator: FirstDetailViewCoordinatorProtocol?
     var categoryMealDto: CategoryMealDto?
+    var mealDetail: MealDetailViewModel.MealDetailClearModel?
     
     lazy private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -28,6 +29,7 @@ class CategoryMealViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clearLightGray
+        
         return collectionView
     }()
     
@@ -60,6 +62,88 @@ class CategoryMealViewController: UIViewController {
     }()
     
     
+    lazy private var favoriteRed: UIButton = {
+       let button = UIButton()
+        button.setImage(.favoriteRed, for: .normal)
+        return button
+    }()
+    
+    
+    //number take a out. Ex -> Service
+    
+    lazy private var favoriteText: UILabel = {
+       let label = UILabel()
+        label.text = "24 people favorited it"
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 12)
+        return label
+    }()
+    
+    lazy private var ingredients: UIButton = {
+       let button = UIButton()
+        button.setTitle("Instructions →", for: .normal)
+        button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+        button.setTitleColor(.iconandIdentifierViewComponentColor1, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 0.3
+        button.layer.borderColor = UIColor.primaryThemeandText.cgColor
+        return button
+    }()
+    
+    lazy private var caloriImage = UIImageView().then{
+        $0.image = .checkList
+    }
+    
+    lazy private var caloriText = UILabel().then{
+        $0.text = "Nutrition per Serving"
+        $0.font = .systemFont(ofSize: 16)
+        $0.textColor = .darkGray
+    }
+    
+    
+    //Bu 4 component servisten beslenecek şimdilik burada configure edildi ancak ileride bu vc de bir configure methodu yazılıp her bir configure onun içinde yapılabilir.
+    
+    lazy private var stackGeneralView = UIView().then{
+        $0.backgroundColor = .white
+    }
+    
+    lazy private var componentsStackView: UIStackView = {
+        let sw = UIStackView()
+        sw.distribution = .fillEqually
+        sw.axis = .horizontal
+        sw.addArrangedSubview(titleAndValueComponent1)
+        sw.addArrangedSubview(titleAndValueComponent2)
+        sw.addArrangedSubview(titleAndValueComponent3)
+        sw.addArrangedSubview(titleAndValueComponent4)
+        return sw
+    }()
+    
+    lazy private var titleAndValueComponent1: TitleandValueViewComponent = {
+       let comp = TitleandValueViewComponent()
+        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "CALORIES", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "155 kcal", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+        return comp
+    }()
+    
+    lazy private var titleAndValueComponent2: TitleandValueViewComponent = {
+       let comp = TitleandValueViewComponent()
+        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "CARBS", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "16 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+        return comp
+    }()
+    
+    lazy private var titleAndValueComponent3: TitleandValueViewComponent = {
+       let comp = TitleandValueViewComponent()
+        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "FAT", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "9 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+        return comp
+    }()
+    
+    lazy private var titleAndValueComponent4: TitleandValueViewComponent = {
+       let comp = TitleandValueViewComponent()
+        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "PROTEIN", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "4 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+        return comp
+    }()
+    
+    
     private var isLoading = true {
         didSet {
             collectionView.isUserInteractionEnabled = !isLoading
@@ -88,6 +172,13 @@ extension CategoryMealViewController {
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(tabbarView)
+        view.addSubview(favoriteRed)
+        view.addSubview(favoriteText)
+        view.addSubview(ingredients)
+        view.addSubview(caloriImage)
+        view.addSubview(caloriText)
+        view.addSubview(stackGeneralView)
+        stackGeneralView.addSubview(componentsStackView)
         tabbarView.addSubview(titleYoutubeandWebsite)
         tabbarView.addSubview(youtubeButton)
         tabbarView.addSubview(websiteButton)
@@ -99,9 +190,44 @@ extension CategoryMealViewController {
             $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-(view.frame.width - 150))
         }
+        favoriteRed.snp.makeConstraints{
+            $0.width.height.equalTo(24)
+            $0.centerY.equalTo(ingredients.snp.centerY)
+            $0.leading.equalToSuperview().offset(24)
+        }
+        favoriteText.snp.makeConstraints{
+            $0.leading.equalTo(favoriteRed.snp.trailing).offset(8)
+            $0.centerY.equalTo(favoriteRed.snp.centerY)
+            $0.trailing.equalTo(ingredients.snp.leading).offset(-16)
+        }
+        ingredients.snp.makeConstraints{
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.top.equalTo(collectionView.snp.bottom).offset(16)
+            $0.height.equalTo(50)
+            $0.width.equalTo(200)
+        }
+        caloriImage.snp.makeConstraints{
+            $0.leading.equalTo(favoriteRed.snp.leading)
+            $0.top.equalTo(ingredients.snp.bottom).offset(16)
+        }
+        caloriText.snp.makeConstraints{
+            $0.leading.equalTo(caloriImage.snp.trailing).offset(10)
+            $0.centerY.equalTo(caloriImage.snp.centerY)
+        }
+        stackGeneralView.snp.makeConstraints{
+            $0.leading.equalTo(caloriImage.snp.leading)
+            $0.trailing.equalTo(ingredients.snp.trailing)
+            $0.top.equalTo(caloriImage.snp.bottom)
+            $0.bottom.equalTo(tabbarView.snp.top)
+        }
+        componentsStackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(30)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.leading.trailing.equalToSuperview()
+        }
         tabbarView.snp.makeConstraints{
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(100)
+            $0.height.equalTo(85)
         }
         titleYoutubeandWebsite.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(16)
@@ -125,6 +251,7 @@ extension CategoryMealViewController {
         let dataService = DataService()
         let viewModel   = MealDetailViewModel(dataService: dataService)
         viewModel.fetchMealDetail(idMeal: dto.mealId) { mealDetail in
+            self.mealDetail = mealDetail
             completion(mealDetail)
         }
     }
@@ -229,41 +356,41 @@ extension CategoryMealViewController {
     
     @objc private func didButtonTapped(_ button: UIButton) {
         
-//        guard let linkURLs = urls else { return }
-//        
-//        if button == youtubeButton {
-//             
-//            let youtube = linkURLs.0
-//            
-//            if let youtubeURL = URL(string: youtube), UIApplication.shared.canOpenURL(youtubeURL) {
-//                        UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
-//                    } else {
-//                        debugPrint("Geçerli bir YouTube URL'si değil veya cihaz YouTube'u açamıyor.")
-//                    }
-//            
-//        }
-//        
-//        if button == websiteButton {
-//            
-//            let website = linkURLs.1
-//            
-//            if let websiteURL = URL(string: website), UIApplication.shared.canOpenURL(websiteURL) {
-//            UIApplication.shared.open(websiteURL, options: [:], completionHandler: nil)
-//            } else {
-//                debugPrint("Geçerli bir Chrome URL'si değil veya cihaz Chrome'u açamıyor.")
-//            }
-//            
-//        }
-//        
+        guard let mealDetail = self.mealDetail else { return }
+        
+        
+        if button == youtubeButton {
+             
+            let youtube =  mealDetail.strYoutube
+
+            if let youtubeURL = URL(string: youtube), UIApplication.shared.canOpenURL(youtubeURL) {
+                        UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+                    } else {
+                        debugPrint("Geçerli bir YouTube URL'si değil veya cihaz YouTube'u açamıyor.")
+                    }
+            
+        }
+        
+        if button == websiteButton {
+            
+            let website = mealDetail.strSource
+
+            if let websiteURL = URL(string: website), UIApplication.shared.canOpenURL(websiteURL) {
+            UIApplication.shared.open(websiteURL, options: [:], completionHandler: nil)
+            } else {
+                debugPrint("Geçerli bir Chrome URL'si değil veya cihaz Chrome'u açamıyor.")
+            }
+            
+        }
+        
+        
+        
+        if button == ingredients {
+            coordinator?.navigateCategoryMealIngredients(categoryMealIngredientsDto: CategoryMealIngredientsDto(strInstructions: mealDetail.strInstructions, youtubeURL: mealDetail.strYoutube))
+        }
+        
     }
     
 }
-
-/***
-    Burada collection view den ayrılan yere kullanıcıların favorileme görüntülenmesi oranı verlecek ayrıca bir buton tarzı bir şey eklenip nasıl yapıldığı adım adım farklı bir sayfada gösterilecek buna ek olarak bir yapay zeka robotu da eklenebiliecek.
- 
-    Örneğin malzeme girilerek kaç kişilik servis vs çıkacağı şeklinde
- 
-***/
 
 

@@ -13,7 +13,6 @@ import Kingfisher
 
 class FirstViewController: UIViewController {
 
-
     weak var coordinator: MainCoordinatorProtocol?
     private var categories = [Category]()
     private var filteredCategories = [Category]()
@@ -69,7 +68,7 @@ class FirstViewController: UIViewController {
     lazy private var item1: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .reservation, title: .StringContentinLocalizable.menuReservation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            print("menü item reserv!")
+            self.coordinator?.navigateReservation()
         }))
         return item
     }()
@@ -77,7 +76,7 @@ class FirstViewController: UIViewController {
     lazy private var item2: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .location, title: .StringContentinLocalizable.menuLocation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            print("menü item location")
+            self.coordinator?.navigateLocation()
         }))
         return item
     }()
@@ -85,7 +84,7 @@ class FirstViewController: UIViewController {
     lazy private var item3: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .photos, title: .StringContentinLocalizable.menuPhotos.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            print("menü item photos")
+            self.coordinator?.navigatePhotos()
         }))
         return item
     }()
@@ -93,7 +92,7 @@ class FirstViewController: UIViewController {
     lazy private var item4: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .favorite, title: .StringContentinLocalizable.menuFavorites.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            print("menü item favorite")
+            self.coordinator?.navigateFavorite()
         }))
         return item
     }()
@@ -101,7 +100,7 @@ class FirstViewController: UIViewController {
     lazy private var item5: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .help, title: .StringContentinLocalizable.menuAbout.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            print("menü item about")
+            self.coordinator?.navigateAbout()
         }))
         return item
     }()
@@ -141,23 +140,12 @@ class FirstViewController: UIViewController {
         return view
     }()
     
-    
-    lazy private var mode: UIButton = {
+    lazy private var ai: UIButton = {
        let button = UIButton()
-        button.setImage(.darkMode, for: .normal)
-        button.setImage(.lightMode, for: .selected)
+        button.setImage(.ai, for: .normal)
         button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         return button
     }()
-    
-    
-    lazy private var language: UIButton = {
-       let button = UIButton()
-        button.setImage(.language, for: .normal)
-        button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
     
     lazy private var horizontalLine = UIView().then{
         $0.backgroundColor = .lightGray
@@ -214,8 +202,7 @@ extension FirstViewController {
         view.backgroundColor = .white
         view.addSubview(menu)
         view.addSubview(searchBar)
-        view.addSubview(mode)
-        view.addSubview(language)
+        view.addSubview(ai)
         view.addSubview(horizontalLine)
         view.addSubview(collectionView)
         setupConstraints()
@@ -232,20 +219,13 @@ extension FirstViewController {
         searchBar.snp.makeConstraints{
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.equalTo(menu.snp.trailing).offset(8)
-            $0.trailing.equalTo(mode.snp.leading).offset(-16)
+            $0.trailing.equalTo(ai.snp.leading).offset(-16)
             $0.height.equalTo(45)
         }
-        mode.snp.makeConstraints{
-            $0.height.equalTo(44)
-            $0.width.equalTo(24)
-            $0.trailing.equalTo(language.snp.leading).offset(-8)
+        ai.snp.makeConstraints{
+            $0.width.height.equalTo(44)
             $0.centerY.equalTo(searchBar.snp.centerY)
-        }
-        language.snp.makeConstraints{
-            $0.height.equalTo(44)
-            $0.width.equalTo(24)
             $0.trailing.equalToSuperview().offset(-16)
-            $0.centerY.equalTo(searchBar.snp.centerY)
         }
         horizontalLine.snp.makeConstraints{
             $0.height.equalTo(1)
@@ -266,28 +246,8 @@ extension FirstViewController {
             showMenu()
         }
         
-        if button == mode {
-            button.isSelected = !button.isSelected
-        }
-        
-        if button == language {
-            
-            button.isSelected = !button.isSelected
-            
-        if button.isSelected {
-            
-            view.addSubview(languageOptions)
-            languageOptions.snp.makeConstraints{
-                $0.top.equalTo(language.snp.bottom).offset(3)
-                $0.trailing.equalTo(language.snp.trailing)
-                $0.width.equalTo(84)
-                $0.height.equalTo(42)
-            }
-            
-            } else {
-                languageOptions.removeFromSuperview()
-            }
-            
+        if button == ai {
+            self.coordinator?.navigateAi()
         }
         
     }

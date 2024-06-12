@@ -32,6 +32,12 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         window.makeKeyAndVisible()
     }
     
+    func navigateAi() {
+        let vc = AiViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
     
     func navigateFirstDetail(firstDetailDto: FirstDetailDto) {
         let vc = FirstDetailViewController()
@@ -41,13 +47,53 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func navigateReservation() {
+        let vc = ResevervationViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateLocation() {
+        let vc = LocationViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigatePhotos() {
+        let vc = PhotosViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateFavorite() {
+        let vc = FavoritesViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func navigateAbout() {
+        let vc = AboutViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
     
     func navigateCategoryMeal(categoryMealDto: CategoryMealDto) {
-        let coordinator = FirstViewCoordinator(navigationController: navigationController)
+        let coordinator = FirstDetailViewCoordinator(navigationController: navigationController)
         self.childCoordinators.append(coordinator)
         coordinator.navigateCategoryMeal(categoryMealDto: categoryMealDto)
     }
 
+    func navigateCategoryMealIngredients(categoryMealIngredientsDto: CategoryMealIngredientsDto) {
+        let coordinator = FirstDetailViewCoordinator(navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.navigateCategoryMealIngredients(categoryMealIngredientsDto: categoryMealIngredientsDto)
+    }
+    
 }
 
 // MARK: - UINavigationControllerDelegate

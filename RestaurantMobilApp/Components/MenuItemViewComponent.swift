@@ -85,6 +85,7 @@ extension MenuItemViewComponent {
         title.text = viewModel.title
         title.font = viewModel.font
         title.textColor = viewModel.textColor
+        self.onTap(handler: viewModel.handleTap)
     }
     
 }

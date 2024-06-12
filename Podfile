@@ -12,6 +12,5 @@ target 'RestaurantMobilApp' do
   pod 'Then'
   pod 'Kingfisher'
   pod 'UIView-Shimmer'
-  pod 'Carbon'
 
 end

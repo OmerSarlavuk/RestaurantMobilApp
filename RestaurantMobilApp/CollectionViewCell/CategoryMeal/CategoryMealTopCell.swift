@@ -43,7 +43,6 @@ class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
     }()
     
     lazy private var favoriteView: UIView = {
-        //View height-width values -> 50
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 18

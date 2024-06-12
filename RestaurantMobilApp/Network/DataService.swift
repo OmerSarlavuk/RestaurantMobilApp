@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import GoogleGenerativeAI
 
 class DataService: DataServiceProtocol {
 
@@ -72,6 +73,25 @@ class DataService: DataServiceProtocol {
         
     }
     
+    
+    func fetchOpenAi(searchs: String, completion: @escaping ((String) -> Void)) {
+        
+        let model = GenerativeModel(name: "gemini-1.5-flash-latest", apiKey: APIKey.default)
+        Task {
+            do {
+                let result = try await model.generateContent(searchs)
+                
+                guard let response = result.text else { return }
+                
+                debugPrint("response -> \(response)")
+                
+            } catch {
+                debugPrint(" GE!MI!NI")
+            }
+            
+        }
+        
+    }
     
 }
 

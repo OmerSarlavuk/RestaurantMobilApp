@@ -13,17 +13,32 @@
 		FB06ED932C08C09500690238 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED922C08C09500690238 /* DataServiceProtocol.swift */; };
 		FB06ED962C08C0BC00690238 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED952C08C0BC00690238 /* Category.swift */; };
 		FB06ED992C08C45900690238 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED982C08C45900690238 /* CategoryViewModel.swift */; };
-		FB7D5AEF2C0F223600C8D9BF /* FirstViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AEE2C0F223600C8D9BF /* FirstViewCoordinatorProtocol.swift */; };
-		FB7D5AF12C0F224000C8D9BF /* FirstViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF02C0F224000C8D9BF /* FirstViewCoordinator.swift */; };
+		FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F112C2C1733C500D45BA9 /* AiViewController.swift */; };
+		FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */; };
+		FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */; };
 		FB7D5AF62C0F2A0600C8D9BF /* extension+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF52C0F2A0600C8D9BF /* extension+UINavigationController.swift */; };
 		FB7EE8362C0A0084001B7D78 /* FirstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EE8352C0A0084001B7D78 /* FirstDetailViewController.swift */; };
-		FB811C5C2C13232800753AFD /* CategoryMealDetailInstructionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB811C5B2C13232800753AFD /* CategoryMealDetailInstructionsCell.swift */; };
+		FB98B4522C181F7D001BB669 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */; };
+		FB98B4542C1823A1001BB669 /* GenerativeAi-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB98B4532C1823A1001BB669 /* GenerativeAi-Info.plist */; };
+		FB98B4572C182450001BB669 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98B4562C182450001BB669 /* APIKey.swift */; };
+		FB98B4592C184037001BB669 /* customActivityIndicatorViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98B4582C184037001BB669 /* customActivityIndicatorViewComponent.swift */; };
 		FB9990FA2C117DE6001E2E26 /* CategoryMealDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9990F92C117DE6001E2E26 /* CategoryMealDetailCell.swift */; };
 		FBA6FF4B2C0EEB5900E0CF7D /* extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF4A2C0EEB5900E0CF7D /* extension + UIViewController.swift */; };
 		FBA6FF4F2C0EEDED00E0CF7D /* FirstDetailDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF4E2C0EEDED00E0CF7D /* FirstDetailDto.swift */; };
 		FBA6FF512C0EF7BC00E0CF7D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBA6FF502C0EF7BC00E0CF7D /* Localizable.xcstrings */; };
 		FBA6FF552C0EFAC400E0CF7D /* extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF542C0EFAC400E0CF7D /* extension+String.swift */; };
 		FBA6FF572C0F034300E0CF7D /* CategoryMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF562C0F034300E0CF7D /* CategoryMealViewController.swift */; };
+		FBB1F6282C19783D00700E72 /* InstructionsStepViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */; };
+		FBBB4F1C2C16DF780070D7C0 /* TitleandValueViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */; };
+		FBBB4F202C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F1F2C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift */; };
+		FBBB4F222C16EA420070D7C0 /* CategoryMealViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F212C16EA420070D7C0 /* CategoryMealViewCoordinator.swift */; };
+		FBBB4F242C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F232C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift */; };
+		FBBB4F262C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F252C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift */; };
+		FBBB4F292C1711BA0070D7C0 /* ResevervationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F282C1711BA0070D7C0 /* ResevervationViewController.swift */; };
+		FBBB4F2B2C1712170070D7C0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F2A2C1712170070D7C0 /* LocationViewController.swift */; };
+		FBBB4F2D2C1712420070D7C0 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F2C2C1712420070D7C0 /* PhotosViewController.swift */; };
+		FBBB4F2F2C1712590070D7C0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F2E2C1712590070D7C0 /* FavoritesViewController.swift */; };
+		FBBB4F312C1712710070D7C0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F302C1712710070D7C0 /* AboutViewController.swift */; };
 		FBBE94A22C1038B8004A4FE2 /* CategoryMealDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A12C1038B8004A4FE2 /* CategoryMealDto.swift */; };
 		FBBE94A42C104C6F004A4FE2 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A32C104C6F004A4FE2 /* MealDetail.swift */; };
 		FBBE94A62C10508C004A4FE2 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A52C10508C004A4FE2 /* MealDetailViewModel.swift */; };
@@ -44,6 +59,7 @@
 		FBCFDEFD2C088CEB00B87638 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDEF82C088CEB00B87638 /* Extension+UIButton.swift */; };
 		FBCFDEFE2C088CEB00B87638 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDEF92C088CEB00B87638 /* Extension+UILabel.swift */; };
 		FBCFDF002C088D6E00B87638 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDEFF2C088D6E00B87638 /* Typealias.swift */; };
+		FBD695132C173FA800C3A4CE /* LabelandGeneralViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */; };
 		FBEB34CF2C0996FE00D5E028 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEB34CE2C0996FE00D5E028 /* ResponseBody.swift */; };
 		FBEB34D32C09AEFA00D5E028 /* MenuItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEB34D22C09AEFA00D5E028 /* MenuItemViewComponent.swift */; };
 		FBFDDB6B2C0DCEBF00DB9DCD /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFDDB6A2C0DCEBF00DB9DCD /* Meal.swift */; };
@@ -76,17 +92,31 @@
 		FB06ED922C08C09500690238 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
 		FB06ED952C08C0BC00690238 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FB06ED982C08C45900690238 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		FB7D5AEE2C0F223600C8D9BF /* FirstViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		FB7D5AF02C0F224000C8D9BF /* FirstViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewCoordinator.swift; sourceTree = "<group>"; };
+		FB3F112C2C1733C500D45BA9 /* AiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiViewController.swift; sourceTree = "<group>"; };
+		FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinator.swift; sourceTree = "<group>"; };
 		FB7D5AF52C0F2A0600C8D9BF /* extension+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UINavigationController.swift"; sourceTree = "<group>"; };
 		FB7EE8352C0A0084001B7D78 /* FirstDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewController.swift; sourceTree = "<group>"; };
-		FB811C5B2C13232800753AFD /* CategoryMealDetailInstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealDetailInstructionsCell.swift; sourceTree = "<group>"; };
+		FB98B4532C1823A1001BB669 /* GenerativeAi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAi-Info.plist"; sourceTree = "<group>"; };
+		FB98B4562C182450001BB669 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		FB98B4582C184037001BB669 /* customActivityIndicatorViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customActivityIndicatorViewComponent.swift; sourceTree = "<group>"; };
 		FB9990F92C117DE6001E2E26 /* CategoryMealDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealDetailCell.swift; sourceTree = "<group>"; };
 		FBA6FF4A2C0EEB5900E0CF7D /* extension + UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension + UIViewController.swift"; sourceTree = "<group>"; };
 		FBA6FF4E2C0EEDED00E0CF7D /* FirstDetailDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailDto.swift; sourceTree = "<group>"; };
 		FBA6FF502C0EF7BC00E0CF7D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		FBA6FF542C0EFAC400E0CF7D /* extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+String.swift"; sourceTree = "<group>"; };
 		FBA6FF562C0F034300E0CF7D /* CategoryMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewController.swift; sourceTree = "<group>"; };
+		FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStepViewComponent.swift; sourceTree = "<group>"; };
+		FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleandValueViewComponent.swift; sourceTree = "<group>"; };
+		FBBB4F1F2C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		FBBB4F212C16EA420070D7C0 /* CategoryMealViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewCoordinator.swift; sourceTree = "<group>"; };
+		FBBB4F232C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealIngredientsViewController.swift; sourceTree = "<group>"; };
+		FBBB4F252C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealIngredientsDto.swift; sourceTree = "<group>"; };
+		FBBB4F282C1711BA0070D7C0 /* ResevervationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResevervationViewController.swift; sourceTree = "<group>"; };
+		FBBB4F2A2C1712170070D7C0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		FBBB4F2C2C1712420070D7C0 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		FBBB4F2E2C1712590070D7C0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		FBBB4F302C1712710070D7C0 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FBBE94A12C1038B8004A4FE2 /* CategoryMealDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealDto.swift; sourceTree = "<group>"; };
 		FBBE94A32C104C6F004A4FE2 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		FBBE94A52C10508C004A4FE2 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +137,7 @@
 		FBCFDEF82C088CEB00B87638 /* Extension+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 		FBCFDEF92C088CEB00B87638 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		FBCFDEFF2C088D6E00B87638 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelandGeneralViewComponent.swift; sourceTree = "<group>"; };
 		FBEB34CE2C0996FE00D5E028 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
 		FBEB34D22C09AEFA00D5E028 /* MenuItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewComponent.swift; sourceTree = "<group>"; };
 		FBFDDB6A2C0DCEBF00DB9DCD /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -121,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCFDEE22C0889F000B87638 /* Pods_RestaurantMobilApp.framework in Frameworks */,
+				FB98B4522C181F7D001BB669 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,10 +208,18 @@
 		FB7D5AED2C0F220A00C8D9BF /* ChildCoordinators */ = {
 			isa = PBXGroup;
 			children = (
-				FB7D5AEE2C0F223600C8D9BF /* FirstViewCoordinatorProtocol.swift */,
-				FB7D5AF02C0F224000C8D9BF /* FirstViewCoordinator.swift */,
+				FBBB4F1E2C16EA1C0070D7C0 /* CategoryMeal */,
+				FBBB4F1D2C16E7E10070D7C0 /* FirstDetail */,
 			);
 			path = ChildCoordinators;
+			sourceTree = "<group>";
+		};
+		FB98B4552C18243A001BB669 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB98B4562C182450001BB669 /* APIKey.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FBA6FF4C2C0EEDB100E0CF7D /* Network */ = {
@@ -197,14 +237,46 @@
 			children = (
 				FBA6FF4E2C0EEDED00E0CF7D /* FirstDetailDto.swift */,
 				FBBE94A12C1038B8004A4FE2 /* CategoryMealDto.swift */,
+				FBBB4F252C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		FBBB4F1D2C16E7E10070D7C0 /* FirstDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */,
+				FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */,
+			);
+			path = FirstDetail;
+			sourceTree = "<group>";
+		};
+		FBBB4F1E2C16EA1C0070D7C0 /* CategoryMeal */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB4F1F2C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift */,
+				FBBB4F212C16EA420070D7C0 /* CategoryMealViewCoordinator.swift */,
+			);
+			path = CategoryMeal;
+			sourceTree = "<group>";
+		};
+		FBBB4F272C1711A60070D7C0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FBBB4F282C1711BA0070D7C0 /* ResevervationViewController.swift */,
+				FBBB4F2A2C1712170070D7C0 /* LocationViewController.swift */,
+				FBBB4F2C2C1712420070D7C0 /* PhotosViewController.swift */,
+				FBBB4F2E2C1712590070D7C0 /* FavoritesViewController.swift */,
+				FBBB4F302C1712710070D7C0 /* AboutViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		FBBE94A02C103851004A4FE2 /* MealDetail */ = {
 			isa = PBXGroup;
 			children = (
 				FBA6FF562C0F034300E0CF7D /* CategoryMealViewController.swift */,
+				FBBB4F232C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift */,
 			);
 			path = MealDetail;
 			sourceTree = "<group>";
@@ -214,7 +286,6 @@
 			children = (
 				FBBE94A82C108900004A4FE2 /* CategoryMealTopCell.swift */,
 				FB9990F92C117DE6001E2E26 /* CategoryMealDetailCell.swift */,
-				FB811C5B2C13232800753AFD /* CategoryMealDetailInstructionsCell.swift */,
 			);
 			path = CategoryMeal;
 			sourceTree = "<group>";
@@ -240,6 +311,7 @@
 		FBCFDECD2C0888F500B87638 /* RestaurantMobilApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB98B4552C18243A001BB669 /* Utils */,
 				FB06ED972C08C44500690238 /* ViewModels */,
 				FB06ED942C08C0AB00690238 /* Models */,
 				FB06ED8D2C08BB5D00690238 /* CollectionViewCell */,
@@ -263,6 +335,7 @@
 				FBCFDED72C0888F700B87638 /* Assets.xcassets */,
 				FBCFDED92C0888F700B87638 /* LaunchScreen.storyboard */,
 				FBA6FF502C0EF7BC00E0CF7D /* Localizable.xcstrings */,
+				FB98B4532C1823A1001BB669 /* GenerativeAi-Info.plist */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -270,8 +343,12 @@
 		FBCFDEE62C088BA400B87638 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FB98B4582C184037001BB669 /* customActivityIndicatorViewComponent.swift */,
 				FB06ED8B2C08AE7A00690238 /* LanguageSelectionsViewComponent.swift */,
 				FBEB34D22C09AEFA00D5E028 /* MenuItemViewComponent.swift */,
+				FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */,
+				FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */,
+				FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -306,6 +383,7 @@
 			children = (
 				FBCFDED22C0888F500B87638 /* FirstViewController.swift */,
 				FB7EE8352C0A0084001B7D78 /* FirstDetailViewController.swift */,
+				FB3F112C2C1733C500D45BA9 /* AiViewController.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -313,6 +391,7 @@
 		FBCFDEEB2C088BA400B87638 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FBBB4F272C1711A60070D7C0 /* Menu */,
 				FBBE94A02C103851004A4FE2 /* MealDetail */,
 				FBCFDEEA2C088BA400B87638 /* First */,
 			);
@@ -358,14 +437,17 @@
 				FBCFDEC72C0888F500B87638 /* Sources */,
 				FBCFDEC82C0888F500B87638 /* Frameworks */,
 				FBCFDEC92C0888F500B87638 /* Resources */,
-				0A77EF50542C17592E3BF342 /* [CP] Embed Pods Frameworks */,
 				FBCFDEE42C0889F000B87638 /* Embed Frameworks */,
+				C515AEBB2B751FF5DF2815AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RestaurantMobilApp;
+			packageProductDependencies = (
+				FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */,
+			);
 			productName = RestaurantMobilApp;
 			productReference = FBCFDECB2C0888F500B87638 /* RestaurantMobilApp.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +476,9 @@
 				Base,
 			);
 			mainGroup = FBCFDEC22C0888F500B87638;
+			packageReferences = (
+				FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = FBCFDECC2C0888F500B87638 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -410,6 +495,7 @@
 			files = (
 				FBCFDED82C0888F700B87638 /* Assets.xcassets in Resources */,
 				FBCFDEDB2C0888F700B87638 /* Base in Resources */,
+				FB98B4542C1823A1001BB669 /* GenerativeAi-Info.plist in Resources */,
 				FBA6FF512C0EF7BC00E0CF7D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +525,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0A77EF50542C17592E3BF342 /* [CP] Embed Pods Frameworks */ = {
+		C515AEBB2B751FF5DF2815AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -463,7 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB811C5C2C13232800753AFD /* CategoryMealDetailInstructionsCell.swift in Sources */,
+				FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */,
 				FBFDDB6F2C0DD17D00DB9DCD /* MealCell.swift in Sources */,
 				FBBE94A42C104C6F004A4FE2 /* MealDetail.swift in Sources */,
 				FBA6FF4F2C0EEDED00E0CF7D /* FirstDetailDto.swift in Sources */,
@@ -475,30 +561,44 @@
 				FB06ED8F2C08BB7200690238 /* CategoriesCell.swift in Sources */,
 				FBFDDB732C0DE22000DB9DCD /* MealCategoryCell.swift in Sources */,
 				FBCFDEFA2C088CEB00B87638 /* Extension+UIImageView.swift in Sources */,
+				FBBB4F242C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift in Sources */,
 				FBFDDB6B2C0DCEBF00DB9DCD /* Meal.swift in Sources */,
 				FBCFDEFB2C088CEB00B87638 /* Extension+UIView.swift in Sources */,
+				FB98B4572C182450001BB669 /* APIKey.swift in Sources */,
+				FBBB4F2B2C1712170070D7C0 /* LocationViewController.swift in Sources */,
 				FB7EE8362C0A0084001B7D78 /* FirstDetailViewController.swift in Sources */,
-				FB7D5AF12C0F224000C8D9BF /* FirstViewCoordinator.swift in Sources */,
+				FBBB4F2F2C1712590070D7C0 /* FavoritesViewController.swift in Sources */,
+				FBBB4F262C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift in Sources */,
+				FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */,
 				FBCFDEF32C088BA400B87638 /* MainCoordinator.swift in Sources */,
+				FBB1F6282C19783D00700E72 /* InstructionsStepViewComponent.swift in Sources */,
 				FB06ED8C2C08AE7A00690238 /* LanguageSelectionsViewComponent.swift in Sources */,
 				FBCFDEFE2C088CEB00B87638 /* Extension+UILabel.swift in Sources */,
 				FBCFDECF2C0888F500B87638 /* AppDelegate.swift in Sources */,
 				FBEB34D32C09AEFA00D5E028 /* MenuItemViewComponent.swift in Sources */,
+				FBD695132C173FA800C3A4CE /* LabelandGeneralViewComponent.swift in Sources */,
 				FBCFDEF22C088BA400B87638 /* Coordinator.swift in Sources */,
 				FBA6FF552C0EFAC400E0CF7D /* extension+String.swift in Sources */,
 				FB06ED912C08C07800690238 /* DataService.swift in Sources */,
 				FB06ED962C08C0BC00690238 /* Category.swift in Sources */,
+				FBBB4F1C2C16DF780070D7C0 /* TitleandValueViewComponent.swift in Sources */,
+				FBBB4F312C1712710070D7C0 /* AboutViewController.swift in Sources */,
+				FBBB4F202C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift in Sources */,
 				FBEB34CF2C0996FE00D5E028 /* ResponseBody.swift in Sources */,
 				FBCFDEFC2C088CEB00B87638 /* Extension+UIStackView.swift in Sources */,
 				FBFDDB6D2C0DCF9F00DB9DCD /* MealViewModel.swift in Sources */,
 				FBBE94A22C1038B8004A4FE2 /* CategoryMealDto.swift in Sources */,
 				FBCFDED12C0888F500B87638 /* SceneDelegate.swift in Sources */,
+				FB98B4592C184037001BB669 /* customActivityIndicatorViewComponent.swift in Sources */,
+				FBBB4F2D2C1712420070D7C0 /* PhotosViewController.swift in Sources */,
 				FBCFDEF42C088BA400B87638 /* MainCoordinatorProtocol.swift in Sources */,
+				FBBB4F222C16EA420070D7C0 /* CategoryMealViewCoordinator.swift in Sources */,
 				FB7D5AF62C0F2A0600C8D9BF /* extension+UINavigationController.swift in Sources */,
 				FBCFDF002C088D6E00B87638 /* Typealias.swift in Sources */,
 				FB06ED992C08C45900690238 /* CategoryViewModel.swift in Sources */,
 				FBBE94A92C108900004A4FE2 /* CategoryMealTopCell.swift in Sources */,
-				FB7D5AEF2C0F223600C8D9BF /* FirstViewCoordinatorProtocol.swift in Sources */,
+				FBBB4F292C1711BA0070D7C0 /* ResevervationViewController.swift in Sources */,
+				FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */,
 				FBBE94A62C10508C004A4FE2 /* MealDetailViewModel.swift in Sources */,
 				FBCFDEFD2C088CEB00B87638 /* Extension+UIButton.swift in Sources */,
 			);
@@ -570,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -627,7 +727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -652,6 +752,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,6 +781,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -715,6 +817,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FBCFDEC32C0888F500B87638 /* Project object */;
 }

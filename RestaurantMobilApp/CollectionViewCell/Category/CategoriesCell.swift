@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import Then
 import UIView_Shimmer
 
 
@@ -43,6 +44,14 @@ class CategoriesCell: UICollectionViewCell, ShimmeringViewProtocol {
         return label
     }()
     
+    lazy private var right = UIImageView().then{
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 12
+        $0.backgroundColor = .white
+        $0.image = .arrowRight
+        $0.contentMode = .scaleAspectFill
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -77,6 +86,7 @@ extension CategoriesCell {
         contentView.addSubview(image)
         contentView.addSubview(categoryName)
         contentView.addSubview(identifier)
+        contentView.addSubview(right)
         setupConstraints()
     }
 
@@ -85,17 +95,21 @@ extension CategoriesCell {
         image.snp.makeConstraints{
             $0.width.height.equalTo(100)
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(12)
         }
         categoryName.snp.makeConstraints{
-            $0.top.equalTo(image.snp.top).offset(4)
-            $0.leading.equalTo(image.snp.trailing).offset(10)
+            $0.top.equalTo(image.snp.top).offset(-4)
+            $0.leading.equalTo(image.snp.trailing).offset(8)
         }
         identifier.snp.makeConstraints{
             $0.leading.equalTo(categoryName.snp.leading)
-            $0.top.equalTo(categoryName.snp.bottom).offset(8)
-            $0.bottom.equalToSuperview().offset(-8)
+            $0.top.equalTo(categoryName.snp.bottom).offset(4)
             $0.trailing.equalToSuperview().offset(-16)
+            $0.bottom.equalTo(right.snp.top).offset(-2)
+        }
+        right.snp.makeConstraints{
+            $0.bottom.trailing.equalToSuperview().offset(-8)
+            $0.width.height.equalTo(24)
         }
     }
     
