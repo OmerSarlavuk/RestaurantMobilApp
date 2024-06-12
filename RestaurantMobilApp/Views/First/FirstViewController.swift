@@ -184,6 +184,13 @@ extension FirstViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
+        
+//        let defaults = UserDefaults.standard
+//           if let bundleID = Bundle.main.bundleIdentifier {
+//               defaults.removePersistentDomain(forName: bundleID)
+//           }
+//           defaults.synchronize()
+        
     }
     
     

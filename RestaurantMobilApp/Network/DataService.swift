@@ -33,6 +33,26 @@ class DataService: DataServiceProtocol {
     }
     
     
+    func fetchCategoryNames(completion: @escaping (([CategoryName]) -> Void)) {
+        
+        AF.request("\(baseUrl)list.php?c=list", method: .get).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(ResponseBodyMeals<CategoryName>.self, from: data)
+                    completion(cevap.meals)
+                    
+                } catch {
+                    debugPrint(error.localizedDescription)
+                }
+            } else {
+                print("!")
+            }
+            
+        }
+        
+    }
+    
+    
     func fetchMeals(category: String, completion: @escaping (([Meal]) -> Void)) {
         
         AF.request("\(baseUrl)filter.php?c=\(category)", method: .get).response { response in

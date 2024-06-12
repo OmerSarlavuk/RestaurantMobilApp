@@ -11,7 +11,8 @@ import UIKit
 protocol DataServiceProtocol: AnyObject {
     
     func fetchCategories(completion: @escaping (([Category]) -> Void))
-    func fetchMeals(category: String, completion: @escaping (([Meal]) -> Void)) 
+    func fetchCategoryNames(completion: @escaping (([CategoryName]) -> Void))
+    func fetchMeals(category: String, completion: @escaping (([Meal]) -> Void))
     func fetchOpenAi(searchs: String, completion: @escaping ((String) -> Void))
     
 }

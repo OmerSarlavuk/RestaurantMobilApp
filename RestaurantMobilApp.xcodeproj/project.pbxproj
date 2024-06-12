@@ -29,6 +29,9 @@
 		FBA6FF552C0EFAC400E0CF7D /* extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF542C0EFAC400E0CF7D /* extension+String.swift */; };
 		FBA6FF572C0F034300E0CF7D /* CategoryMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA6FF562C0F034300E0CF7D /* CategoryMealViewController.swift */; };
 		FBB1F6282C19783D00700E72 /* InstructionsStepViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */; };
+		FBB1F62A2C19CD3A00700E72 /* FavoriteDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1F6292C19CD3A00700E72 /* FavoriteDto.swift */; };
+		FBB1F62C2C19CDF100700E72 /* LocalDataBaseProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1F62B2C19CDF100700E72 /* LocalDataBaseProcess.swift */; };
+		FBB1F62E2C19D61300700E72 /* CategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1F62D2C19D61300700E72 /* CategoryName.swift */; };
 		FBBB4F1C2C16DF780070D7C0 /* TitleandValueViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */; };
 		FBBB4F202C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F1F2C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift */; };
 		FBBB4F222C16EA420070D7C0 /* CategoryMealViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB4F212C16EA420070D7C0 /* CategoryMealViewCoordinator.swift */; };
@@ -107,6 +110,9 @@
 		FBA6FF542C0EFAC400E0CF7D /* extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+String.swift"; sourceTree = "<group>"; };
 		FBA6FF562C0F034300E0CF7D /* CategoryMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewController.swift; sourceTree = "<group>"; };
 		FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStepViewComponent.swift; sourceTree = "<group>"; };
+		FBB1F6292C19CD3A00700E72 /* FavoriteDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDto.swift; sourceTree = "<group>"; };
+		FBB1F62B2C19CDF100700E72 /* LocalDataBaseProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBaseProcess.swift; sourceTree = "<group>"; };
+		FBB1F62D2C19D61300700E72 /* CategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryName.swift; sourceTree = "<group>"; };
 		FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleandValueViewComponent.swift; sourceTree = "<group>"; };
 		FBBB4F1F2C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FBBB4F212C16EA420070D7C0 /* CategoryMealViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealViewCoordinator.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				FB98B4562C182450001BB669 /* APIKey.swift */,
+				FBB1F62B2C19CDF100700E72 /* LocalDataBaseProcess.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 				FB06ED952C08C0BC00690238 /* Category.swift */,
 				FBFDDB6A2C0DCEBF00DB9DCD /* Meal.swift */,
 				FBBE94A32C104C6F004A4FE2 /* MealDetail.swift */,
+				FBB1F62D2C19D61300700E72 /* CategoryName.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 				FBA6FF4E2C0EEDED00E0CF7D /* FirstDetailDto.swift */,
 				FBBE94A12C1038B8004A4FE2 /* CategoryMealDto.swift */,
 				FBBB4F252C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift */,
+				FBB1F6292C19CD3A00700E72 /* FavoriteDto.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -579,6 +588,7 @@
 				FBD695132C173FA800C3A4CE /* LabelandGeneralViewComponent.swift in Sources */,
 				FBCFDEF22C088BA400B87638 /* Coordinator.swift in Sources */,
 				FBA6FF552C0EFAC400E0CF7D /* extension+String.swift in Sources */,
+				FBB1F62A2C19CD3A00700E72 /* FavoriteDto.swift in Sources */,
 				FB06ED912C08C07800690238 /* DataService.swift in Sources */,
 				FB06ED962C08C0BC00690238 /* Category.swift in Sources */,
 				FBBB4F1C2C16DF780070D7C0 /* TitleandValueViewComponent.swift in Sources */,
@@ -593,7 +603,9 @@
 				FBBB4F2D2C1712420070D7C0 /* PhotosViewController.swift in Sources */,
 				FBCFDEF42C088BA400B87638 /* MainCoordinatorProtocol.swift in Sources */,
 				FBBB4F222C16EA420070D7C0 /* CategoryMealViewCoordinator.swift in Sources */,
+				FBB1F62E2C19D61300700E72 /* CategoryName.swift in Sources */,
 				FB7D5AF62C0F2A0600C8D9BF /* extension+UINavigationController.swift in Sources */,
+				FBB1F62C2C19CDF100700E72 /* LocalDataBaseProcess.swift in Sources */,
 				FBCFDF002C088D6E00B87638 /* Typealias.swift in Sources */,
 				FB06ED992C08C45900690238 /* CategoryViewModel.swift in Sources */,
 				FBBE94A92C108900004A4FE2 /* CategoryMealTopCell.swift in Sources */,

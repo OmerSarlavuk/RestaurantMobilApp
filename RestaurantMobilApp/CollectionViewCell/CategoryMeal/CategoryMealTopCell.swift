@@ -15,8 +15,8 @@ import UIView_Shimmer
 class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
  
     static let key = "CategoryMealTopCell"
-   
     var shimmeringAnimatedItems: [UIView] {[mealImage, favoriteView, orderView ]}
+    var favoriteDto: FavoriteDto?
     
     lazy private var parentView = UIView().then{
         $0.backgroundColor = .clear
@@ -131,14 +131,36 @@ extension CategoryMealTopCell {
         switch button.tag {
             
         case 1:
-            print()
+            
+            guard let dto = favoriteDto else { return }
+            
+            let local = LocalDataBaseProcess()
+            
+            local.setDATA(value: "\(dto.imageURL)\r\n\(dto.mealName)\r\n\(dto.mealId)", key: dto.mealName)
+            
         case 2:
             print()
         default:
             print()
+            
         }
         
         
+    }
+    
+    
+    func control() {
+        guard let dto = favoriteDto else { return }
+        
+        let local = LocalDataBaseProcess()
+        
+        let check = local.getDATA(key: dto.mealName)
+        
+        if !check.isEmpty {
+            favoriteButton.isSelected = true
+            debugPrint("r -> \(check)")
+        }
+
     }
     
 }

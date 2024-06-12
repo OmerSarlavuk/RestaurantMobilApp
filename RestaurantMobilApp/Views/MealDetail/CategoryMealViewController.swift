@@ -13,7 +13,7 @@ import UIView_Shimmer
 
 class CategoryMealViewController: UIViewController {
     
-    weak var coordinator: FirstDetailViewCoordinatorProtocol?
+    var coordinator: FirstDetailViewCoordinatorProtocol?
     var categoryMealDto: CategoryMealDto?
     var mealDetail: MealDetailViewModel.MealDetailClearModel?
     
@@ -275,10 +275,14 @@ extension CategoryMealViewController: UICollectionViewDelegateFlowLayout, UIColl
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryMealTopCell.key, for: indexPath) as! CategoryMealTopCell
             cell.setTemplateWithSubviews(isLoading, animate: true, viewBackgroundColor: .systemBackground)
-            if let url = self.categoryMealDto?.mealURL {
-                let url = URL(string: url)
-                cell.mealImage.kf.setImage(with: url)
+            if let url = self.categoryMealDto?.mealURL,
+               let mealName = self.categoryMealDto?.mealName,
+               let mealId = self.categoryMealDto?.mealId{
+                let urls = URL(string: url)
+                cell.mealImage.kf.setImage(with: urls)
+                cell.favoriteDto = FavoriteDto(mealId: mealId, imageURL: url, mealName: mealName)
             }
+            cell.control()
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryMealDetailCell.key, for: indexPath) as! CategoryMealDetailCell

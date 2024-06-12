@@ -21,6 +21,7 @@ class InstructionsStepViewComponent: UIView {
         button.layer.cornerRadius = 16
         button.setImage(.down, for: .normal)
         button.setImage(.up, for: .selected)
+        button.isUserInteractionEnabled = false
         return button
     }()
     
