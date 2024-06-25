@@ -105,6 +105,14 @@ class FirstViewController: UIViewController {
         return item
     }()
     
+    lazy private var item6: MenuItemViewComponent = {
+       let item = MenuItemViewComponent()
+        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .login, title: .StringContentinLocalizable.login.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+            self.coordinator?.navigateLogin()
+        }))
+        return item
+    }()
+    
     lazy private var menuStackView: UIStackView = {
        let stack = UIStackView()
         stack.backgroundColor = .white
@@ -116,6 +124,7 @@ class FirstViewController: UIViewController {
         stack.addArrangedSubview(item3)
         stack.addArrangedSubview(item4)
         stack.addArrangedSubview(item5)
+        stack.addArrangedSubview(item6)
         return stack
     }()
     
@@ -184,13 +193,6 @@ extension FirstViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
-        
-//        let defaults = UserDefaults.standard
-//           if let bundleID = Bundle.main.bundleIdentifier {
-//               defaults.removePersistentDomain(forName: bundleID)
-//           }
-//           defaults.synchronize()
-        
     }
     
     
@@ -349,7 +351,7 @@ extension FirstViewController {
             $0.centerY.equalToSuperview().offset(-250)
         }
         menuStackView.snp.makeConstraints{
-            $0.centerY.equalToSuperview().offset(100)
+            $0.centerY.equalToSuperview().offset(80)
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(350)
@@ -406,7 +408,7 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = self.categories[indexPath.row]
+        let category = self.filteredCategories[indexPath.row]
         
         languageOptions.removeFromSuperview()
         self.menuView.removeFromSuperview()
@@ -440,6 +442,7 @@ extension FirstViewController : UISearchBarDelegate {
     }
     
 }
+
 extension FirstViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

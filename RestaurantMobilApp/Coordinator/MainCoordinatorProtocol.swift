@@ -16,8 +16,11 @@ protocol MainCoordinatorProtocol : AnyObject {
     func navigatePhotos()
     func navigateFavorite()
     func navigateAbout()
+    func navigateLogin()
     func navigateCategoryMeal(categoryMealDto: CategoryMealDto)
     func navigateCategoryMealIngredients(categoryMealIngredientsDto: CategoryMealIngredientsDto)
+    func navigateForgetPassword()
+    func navigateSignUp()
     
 }
 

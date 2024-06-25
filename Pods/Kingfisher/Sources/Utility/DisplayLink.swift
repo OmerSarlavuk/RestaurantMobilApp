@@ -139,7 +139,7 @@ class DisplayLink: DisplayLinkCompatible {
     
     func add(to runLoop: RunLoop, forMode mode: RunLoop.Mode) {
         assert(runLoop == .main)
-        schedulers[runLoop, default: []].append(mode)
+        schedulers[runLoop, `encyrpt_key`: []].append(mode)
     }
     
     func remove(from runLoop: RunLoop, forMode mode: RunLoop.Mode) {

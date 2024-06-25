@@ -1,32 +1,71 @@
 PODS:
   - Alamofire (5.9.1)
+  - AppAuth (1.7.5):
+    - AppAuth/Core (= 1.7.5)
+    - AppAuth/ExternalUserAgent (= 1.7.5)
+  - AppAuth/Core (1.7.5)
+  - AppAuth/ExternalUserAgent (1.7.5):
+    - AppAuth/Core
+  - GoogleMaps (9.0.0):
+    - GoogleMaps/Maps (= 9.0.0)
+  - GoogleMaps/Base (9.0.0)
+  - GoogleMaps/Maps (9.0.0):
+    - GoogleMaps/Base
+  - GoogleSignIn (7.1.0):
+    - AppAuth (< 2.0, >= 1.7.3)
+    - GTMAppAuth (< 5.0, >= 4.1.1)
+    - GTMSessionFetcher/Core (~> 3.3)
+  - GTMAppAuth (4.1.1):
+    - AppAuth/Core (~> 1.7)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3)
+  - GTMSessionFetcher/Core (3.4.1)
   - Kingfisher (7.12.0)
+  - lottie-ios (4.4.3)
   - SnapKit (5.7.1)
+  - SpreadsheetView (0.9.1)
   - Then (3.0.0)
   - UIView-Shimmer (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
+  - GoogleMaps
+  - GoogleSignIn
   - Kingfisher
+  - lottie-ios
   - SnapKit
+  - SpreadsheetView
   - Then
   - UIView-Shimmer
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AppAuth
+    - GoogleMaps
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
     - Kingfisher
+    - lottie-ios
     - SnapKit
+    - SpreadsheetView
     - Then
     - UIView-Shimmer
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
+  GoogleMaps: 4907d0d42bf8cd58f56743e31f91d23c10682745
+  GoogleSignIn: d4281ab6cf21542b1cfaff85c191f230b399d2db
+  GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
+  GTMSessionFetcher: 8000756fc1c19d2e5697b90311f7832d2e33f6cd
   Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   UIView-Shimmer: ff0a32c73d67c7dbdea3d9e530538b10d18aea56
 
-PODFILE CHECKSUM: 1409f72e7a5e134fa183b137220374e64d583035
+PODFILE CHECKSUM: 8e56a4cea98fe64e29fd56583598cee7addc4cc6
 
 COCOAPODS: 1.14.3

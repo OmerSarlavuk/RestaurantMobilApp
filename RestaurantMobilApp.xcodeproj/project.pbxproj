@@ -13,12 +13,14 @@
 		FB06ED932C08C09500690238 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED922C08C09500690238 /* DataServiceProtocol.swift */; };
 		FB06ED962C08C0BC00690238 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED952C08C0BC00690238 /* Category.swift */; };
 		FB06ED992C08C45900690238 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06ED982C08C45900690238 /* CategoryViewModel.swift */; };
+		FB11369D2C2AB803001BF7AD /* EncodedDataAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11369C2C2AB803001BF7AD /* EncodedDataAlgorithms.swift */; };
+		FB1136A12C2AD5E4001BF7AD /* Encyrpt-Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */; };
+		FB1136A32C2AD646001BF7AD /* EncyrptKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */; };
 		FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F112C2C1733C500D45BA9 /* AiViewController.swift */; };
 		FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */; };
 		FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */; };
 		FB7D5AF62C0F2A0600C8D9BF /* extension+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF52C0F2A0600C8D9BF /* extension+UINavigationController.swift */; };
 		FB7EE8362C0A0084001B7D78 /* FirstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EE8352C0A0084001B7D78 /* FirstDetailViewController.swift */; };
-		FB98B4522C181F7D001BB669 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */; };
 		FB98B4542C1823A1001BB669 /* GenerativeAi-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB98B4532C1823A1001BB669 /* GenerativeAi-Info.plist */; };
 		FB98B4572C182450001BB669 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98B4562C182450001BB669 /* APIKey.swift */; };
 		FB98B4592C184037001BB669 /* customActivityIndicatorViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98B4582C184037001BB669 /* customActivityIndicatorViewComponent.swift */; };
@@ -46,6 +48,11 @@
 		FBBE94A42C104C6F004A4FE2 /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A32C104C6F004A4FE2 /* MealDetail.swift */; };
 		FBBE94A62C10508C004A4FE2 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A52C10508C004A4FE2 /* MealDetailViewModel.swift */; };
 		FBBE94A92C108900004A4FE2 /* CategoryMealTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE94A82C108900004A4FE2 /* CategoryMealTopCell.swift */; };
+		FBCB72C82C1C2225008A733E /* aiAnimationView.json in Resources */ = {isa = PBXBuildFile; fileRef = FBCB72C72C1C2225008A733E /* aiAnimationView.json */; };
+		FBCB72CE2C1C2CF2008A733E /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = FBCB72CD2C1C2CF2008A733E /* GoogleGenerativeAI */; };
+		FBCB72D02C1C2D6A008A733E /* darkMap.json in Resources */ = {isa = PBXBuildFile; fileRef = FBCB72CF2C1C2D6A008A733E /* darkMap.json */; };
+		FBCB72D32C1C525E008A733E /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB72D22C1C525E008A733E /* Cells.swift */; };
+		FBCB72D52C1C7DFA008A733E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB72D42C1C7DFA008A733E /* LoginViewController.swift */; };
 		FBCFDECF2C0888F500B87638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDECE2C0888F500B87638 /* AppDelegate.swift */; };
 		FBCFDED12C0888F500B87638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDED02C0888F500B87638 /* SceneDelegate.swift */; };
 		FBCFDED32C0888F500B87638 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDED22C0888F500B87638 /* FirstViewController.swift */; };
@@ -63,6 +70,11 @@
 		FBCFDEFE2C088CEB00B87638 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDEF92C088CEB00B87638 /* Extension+UILabel.swift */; };
 		FBCFDF002C088D6E00B87638 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFDEFF2C088D6E00B87638 /* Typealias.swift */; };
 		FBD695132C173FA800C3A4CE /* LabelandGeneralViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */; };
+		FBE5786C2C2B006100C14534 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5786B2C2B006100C14534 /* ForgetPasswordViewController.swift */; };
+		FBE5786E2C2B009900C14534 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5786D2C2B009900C14534 /* SignUpViewController.swift */; };
+		FBE578712C2B02AA00C14534 /* LoginCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE578702C2B02AA00C14534 /* LoginCoordinatorProtocol.swift */; };
+		FBE578732C2B02D400C14534 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE578722C2B02D400C14534 /* LoginCoordinator.swift */; };
+		FBE578752C2B071C00C14534 /* emailAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE578742C2B071C00C14534 /* emailAnimation.json */; };
 		FBEB34CF2C0996FE00D5E028 /* ResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEB34CE2C0996FE00D5E028 /* ResponseBody.swift */; };
 		FBEB34D32C09AEFA00D5E028 /* MenuItemViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEB34D22C09AEFA00D5E028 /* MenuItemViewComponent.swift */; };
 		FBFDDB6B2C0DCEBF00DB9DCD /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFDDB6A2C0DCEBF00DB9DCD /* Meal.swift */; };
@@ -95,6 +107,9 @@
 		FB06ED922C08C09500690238 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
 		FB06ED952C08C0BC00690238 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FB06ED982C08C45900690238 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		FB11369C2C2AB803001BF7AD /* EncodedDataAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedDataAlgorithms.swift; sourceTree = "<group>"; };
+		FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Encyrpt-Key.plist"; sourceTree = "<group>"; };
+		FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyrptKEY.swift; sourceTree = "<group>"; };
 		FB3F112C2C1733C500D45BA9 /* AiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiViewController.swift; sourceTree = "<group>"; };
 		FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinator.swift; sourceTree = "<group>"; };
@@ -127,6 +142,10 @@
 		FBBE94A32C104C6F004A4FE2 /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		FBBE94A52C10508C004A4FE2 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		FBBE94A82C108900004A4FE2 /* CategoryMealTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMealTopCell.swift; sourceTree = "<group>"; };
+		FBCB72C72C1C2225008A733E /* aiAnimationView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aiAnimationView.json; sourceTree = "<group>"; };
+		FBCB72CF2C1C2D6A008A733E /* darkMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = darkMap.json; sourceTree = "<group>"; };
+		FBCB72D22C1C525E008A733E /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		FBCB72D42C1C7DFA008A733E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FBCFDECB2C0888F500B87638 /* RestaurantMobilApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantMobilApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCFDECE2C0888F500B87638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBCFDED02C0888F500B87638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +163,11 @@
 		FBCFDEF92C088CEB00B87638 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		FBCFDEFF2C088D6E00B87638 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelandGeneralViewComponent.swift; sourceTree = "<group>"; };
+		FBE5786B2C2B006100C14534 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		FBE5786D2C2B009900C14534 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FBE578702C2B02AA00C14534 /* LoginCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		FBE578722C2B02D400C14534 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FBE578742C2B071C00C14534 /* emailAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emailAnimation.json; sourceTree = "<group>"; };
 		FBEB34CE2C0996FE00D5E028 /* ResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBody.swift; sourceTree = "<group>"; };
 		FBEB34D22C09AEFA00D5E028 /* MenuItemViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewComponent.swift; sourceTree = "<group>"; };
 		FBFDDB6A2C0DCEBF00DB9DCD /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -158,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCFDEE22C0889F000B87638 /* Pods_RestaurantMobilApp.framework in Frameworks */,
-				FB98B4522C181F7D001BB669 /* GoogleGenerativeAI in Frameworks */,
+				FBCB72CE2C1C2CF2008A733E /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +238,7 @@
 		FB7D5AED2C0F220A00C8D9BF /* ChildCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				FBE5786F2C2B029C00C14534 /* Login */,
 				FBBB4F1E2C16EA1C0070D7C0 /* CategoryMeal */,
 				FBBB4F1D2C16E7E10070D7C0 /* FirstDetail */,
 			);
@@ -225,6 +250,8 @@
 			children = (
 				FB98B4562C182450001BB669 /* APIKey.swift */,
 				FBB1F62B2C19CDF100700E72 /* LocalDataBaseProcess.swift */,
+				FB11369C2C2AB803001BF7AD /* EncodedDataAlgorithms.swift */,
+				FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,7 +299,8 @@
 		FBBB4F272C1711A60070D7C0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FBBB4F282C1711BA0070D7C0 /* ResevervationViewController.swift */,
+				FBE5786A2C2B004F00C14534 /* Login */,
+				FBCB72D12C1C5244008A733E /* Reservation */,
 				FBBB4F2A2C1712170070D7C0 /* LocationViewController.swift */,
 				FBBB4F2C2C1712420070D7C0 /* PhotosViewController.swift */,
 				FBBB4F2E2C1712590070D7C0 /* FavoritesViewController.swift */,
@@ -297,6 +325,15 @@
 				FB9990F92C117DE6001E2E26 /* CategoryMealDetailCell.swift */,
 			);
 			path = CategoryMeal;
+			sourceTree = "<group>";
+		};
+		FBCB72D12C1C5244008A733E /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB72D22C1C525E008A733E /* Cells.swift */,
+				FBBB4F282C1711BA0070D7C0 /* ResevervationViewController.swift */,
+			);
+			path = Reservation;
 			sourceTree = "<group>";
 		};
 		FBCFDEC22C0888F500B87638 = {
@@ -338,6 +375,9 @@
 		FBCFDEE52C088B8D00B87638 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
+				FBE578742C2B071C00C14534 /* emailAnimation.json */,
+				FBCB72CF2C1C2D6A008A733E /* darkMap.json */,
+				FBCB72C72C1C2225008A733E /* aiAnimationView.json */,
 				FBCFDEFF2C088D6E00B87638 /* Typealias.swift */,
 				FBCFDECE2C0888F500B87638 /* AppDelegate.swift */,
 				FBCFDED02C0888F500B87638 /* SceneDelegate.swift */,
@@ -345,6 +385,7 @@
 				FBCFDED92C0888F700B87638 /* LaunchScreen.storyboard */,
 				FBA6FF502C0EF7BC00E0CF7D /* Localizable.xcstrings */,
 				FB98B4532C1823A1001BB669 /* GenerativeAi-Info.plist */,
+				FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -418,6 +459,25 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		FBE5786A2C2B004F00C14534 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBCB72D42C1C7DFA008A733E /* LoginViewController.swift */,
+				FBE5786B2C2B006100C14534 /* ForgetPasswordViewController.swift */,
+				FBE5786D2C2B009900C14534 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FBE5786F2C2B029C00C14534 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBE578702C2B02AA00C14534 /* LoginCoordinatorProtocol.swift */,
+				FBE578722C2B02D400C14534 /* LoginCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		FBFDDB702C0DE20600DB9DCD /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +508,7 @@
 				FBCFDEC92C0888F500B87638 /* Resources */,
 				FBCFDEE42C0889F000B87638 /* Embed Frameworks */,
 				C515AEBB2B751FF5DF2815AC /* [CP] Embed Pods Frameworks */,
+				1446A04B81816499D3B708B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -455,7 +516,7 @@
 			);
 			name = RestaurantMobilApp;
 			packageProductDependencies = (
-				FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */,
+				FBCB72CD2C1C2CF2008A733E /* GoogleGenerativeAI */,
 			);
 			productName = RestaurantMobilApp;
 			productReference = FBCFDECB2C0888F500B87638 /* RestaurantMobilApp.app */;
@@ -486,7 +547,7 @@
 			);
 			mainGroup = FBCFDEC22C0888F500B87638;
 			packageReferences = (
-				FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+				FBCB72CC2C1C2CF2008A733E /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = FBCFDECC2C0888F500B87638 /* Products */;
 			projectDirPath = "";
@@ -503,9 +564,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCFDED82C0888F700B87638 /* Assets.xcassets in Resources */,
+				FBCB72C82C1C2225008A733E /* aiAnimationView.json in Resources */,
+				FBCB72D02C1C2D6A008A733E /* darkMap.json in Resources */,
+				FBE578752C2B071C00C14534 /* emailAnimation.json in Resources */,
 				FBCFDEDB2C0888F700B87638 /* Base in Resources */,
 				FB98B4542C1823A1001BB669 /* GenerativeAi-Info.plist in Resources */,
 				FBA6FF512C0EF7BC00E0CF7D /* Localizable.xcstrings in Resources */,
+				FB1136A12C2AD5E4001BF7AD /* Encyrpt-Key.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +599,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1446A04B81816499D3B708B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RestaurantMobilApp/Pods-RestaurantMobilApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RestaurantMobilApp/Pods-RestaurantMobilApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RestaurantMobilApp/Pods-RestaurantMobilApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C515AEBB2B751FF5DF2815AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,10 +640,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB11369D2C2AB803001BF7AD /* EncodedDataAlgorithms.swift in Sources */,
 				FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */,
+				FBCB72D32C1C525E008A733E /* Cells.swift in Sources */,
 				FBFDDB6F2C0DD17D00DB9DCD /* MealCell.swift in Sources */,
 				FBBE94A42C104C6F004A4FE2 /* MealDetail.swift in Sources */,
 				FBA6FF4F2C0EEDED00E0CF7D /* FirstDetailDto.swift in Sources */,
+				FBE5786E2C2B009900C14534 /* SignUpViewController.swift in Sources */,
 				FBCFDED32C0888F500B87638 /* FirstViewController.swift in Sources */,
 				FB06ED932C08C09500690238 /* DataServiceProtocol.swift in Sources */,
 				FB9990FA2C117DE6001E2E26 /* CategoryMealDetailCell.swift in Sources */,
@@ -578,6 +663,7 @@
 				FB7EE8362C0A0084001B7D78 /* FirstDetailViewController.swift in Sources */,
 				FBBB4F2F2C1712590070D7C0 /* FavoritesViewController.swift in Sources */,
 				FBBB4F262C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift in Sources */,
+				FBE5786C2C2B006100C14534 /* ForgetPasswordViewController.swift in Sources */,
 				FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */,
 				FBCFDEF32C088BA400B87638 /* MainCoordinator.swift in Sources */,
 				FBB1F6282C19783D00700E72 /* InstructionsStepViewComponent.swift in Sources */,
@@ -594,15 +680,18 @@
 				FBBB4F1C2C16DF780070D7C0 /* TitleandValueViewComponent.swift in Sources */,
 				FBBB4F312C1712710070D7C0 /* AboutViewController.swift in Sources */,
 				FBBB4F202C16EA3B0070D7C0 /* CategoryMealViewCoordinatorProtocol.swift in Sources */,
+				FBE578712C2B02AA00C14534 /* LoginCoordinatorProtocol.swift in Sources */,
 				FBEB34CF2C0996FE00D5E028 /* ResponseBody.swift in Sources */,
 				FBCFDEFC2C088CEB00B87638 /* Extension+UIStackView.swift in Sources */,
 				FBFDDB6D2C0DCF9F00DB9DCD /* MealViewModel.swift in Sources */,
 				FBBE94A22C1038B8004A4FE2 /* CategoryMealDto.swift in Sources */,
 				FBCFDED12C0888F500B87638 /* SceneDelegate.swift in Sources */,
+				FBCB72D52C1C7DFA008A733E /* LoginViewController.swift in Sources */,
 				FB98B4592C184037001BB669 /* customActivityIndicatorViewComponent.swift in Sources */,
 				FBBB4F2D2C1712420070D7C0 /* PhotosViewController.swift in Sources */,
 				FBCFDEF42C088BA400B87638 /* MainCoordinatorProtocol.swift in Sources */,
 				FBBB4F222C16EA420070D7C0 /* CategoryMealViewCoordinator.swift in Sources */,
+				FBE578732C2B02D400C14534 /* LoginCoordinator.swift in Sources */,
 				FBB1F62E2C19D61300700E72 /* CategoryName.swift in Sources */,
 				FB7D5AF62C0F2A0600C8D9BF /* extension+UINavigationController.swift in Sources */,
 				FBB1F62C2C19CDF100700E72 /* LocalDataBaseProcess.swift in Sources */,
@@ -612,6 +701,7 @@
 				FBBB4F292C1711BA0070D7C0 /* ResevervationViewController.swift in Sources */,
 				FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */,
 				FBBE94A62C10508C004A4FE2 /* MealDetailViewModel.swift in Sources */,
+				FB1136A32C2AD646001BF7AD /* EncyrptKEY.swift in Sources */,
 				FBCFDEFD2C088CEB00B87638 /* Extension+UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +850,7 @@
 				DEVELOPMENT_TEAM = UKSYRU99Z6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestaurantMobilApp/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs gallery to access photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -789,6 +880,7 @@
 				DEVELOPMENT_TEAM = UKSYRU99Z6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RestaurantMobilApp/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs gallery to access photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -831,7 +923,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+		FBCB72CC2C1C2CF2008A733E /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google-gemini/generative-ai-swift";
 			requirement = {
@@ -842,9 +934,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FB98B4512C181F7D001BB669 /* GoogleGenerativeAI */ = {
+		FBCB72CD2C1C2CF2008A733E /* GoogleGenerativeAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FB98B4502C181F7D001BB669 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			package = FBCB72CC2C1C2CF2008A733E /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
 			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */

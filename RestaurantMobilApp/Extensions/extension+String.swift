@@ -20,6 +20,7 @@ extension String {
         case menuFavorites   = "menuFavorites"
         case menuAbout       = "menuAbout"
         case menuLocation    = "menuLocation"
+        case login           = "Login"
         
         
         var localised: String {

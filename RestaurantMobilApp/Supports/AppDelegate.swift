@@ -6,14 +6,42 @@
 //
 
 import UIKit
+import GoogleMaps
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    let signInConfig = "191109498785-5rle8csqhgnunv94q3lgmo2ndp659q7b.apps.googleusercontent.com"
 
 
+    func application(
+      _ app: UIApplication,
+      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+      return false
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyAa-7IFNQR7egzQokj-WQsXjIZXGPNIQj4")
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                
+            } else {
+                
+            }
+          }
+        
         return true
     }
 

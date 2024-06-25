@@ -29,6 +29,12 @@ public class LocalDataBaseProcess {
         return ""
     }
     
+    func removeDATA(key: String) {
+        
+        userDefault.removeObject(forKey: key)
+        
+    }
+    
 }
 
 

@@ -10,12 +10,15 @@ import SnapKit
 import Then
 import SwiftUI
 import GoogleGenerativeAI
+import Lottie
+
 
 class AiViewController: UIViewController {
     
     weak var coordinator: MainCoordinatorProtocol?
     var messages: [String] = []
     var selectedImage: UIImage?
+    var animationView: LottieAnimationView!
     
     lazy private var indicator = customActivityIndicatorViewComponent()
     
@@ -36,7 +39,7 @@ class AiViewController: UIViewController {
     }()
     
     lazy private var comp1 = LabelandGeneralViewComponent().then{
-        $0.configure(viewModel: LabelandGeneralViewComponent.ViewModel(content: "By entering at least 3 ingredients, you can create a meal, dessert, drink, etc. recommended by Open Ai. You can get suggestion.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
+        $0.configure(viewModel: LabelandGeneralViewComponent.ViewModel(content: "By entering at least 3 ingredients, you can create a meal, dessert, drink, etc. recommended by GF Chat. You can get suggestion.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
     }
     
     lazy private var comp2 = LabelandGeneralViewComponent().then{
@@ -108,14 +111,14 @@ class AiViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.navigationItem.title = "Open Ai"
+        self.navigationItem.title = "GF Chat"
         view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(scrollContentView)
         scrollContentView.addSubview(logo)
         scrollContentView.addSubview(comp1)
         scrollContentView.addSubview(comp2)
-        scrollContentView.addSubview(aiImage)
+//        scrollContentView.addSubview(aiImage)
         scrollContentView.addSubview(welcome)
         scrollContentView.addSubview(contentLabel)
         view.addSubview(searchView)
@@ -123,6 +126,7 @@ class AiViewController: UIViewController {
         searchView.addSubview(imageButton)
         view.addSubview(sendButton)
         setupConstraints()
+        setupAnimationView()
     }
     
     private func setupConstraints() {
@@ -151,13 +155,8 @@ class AiViewController: UIViewController {
             $0.top.equalTo(comp1.snp.bottom).offset(16)
             $0.height.equalTo(130)
         }
-        aiImage.snp.makeConstraints{
-            $0.top.equalTo(comp2.snp.bottom).offset(24)
-            $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(44)
-        }
         welcome.snp.makeConstraints{
-            $0.top.equalTo(aiImage.snp.bottom).offset(12)
+            $0.top.equalTo(comp2.snp.bottom).offset(100)
             $0.centerX.equalToSuperview()
         }
         contentLabel.snp.makeConstraints{
@@ -220,6 +219,14 @@ class AiViewController: UIViewController {
         }
     }
     
+    
+    func getIdentifierHeight() -> CGFloat {
+           let maxSize = CGSize(width: self.contentLabel.frame.width, height: CGFloat.greatestFiniteMagnitude)
+           let height = contentLabel.sizeThatFits(maxSize).height
+           return height
+       }
+    
+    
     @objc private func imageButtonTapped() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
@@ -228,13 +235,15 @@ class AiViewController: UIViewController {
     }
     
     @objc private func didButtonTapped(_ button: UIButton) {
+        
         let model = GenerativeModel(name: "gemini-1.5-flash-latest", apiKey: APIKey.default)
         guard let searchText = searchTextField.text, !searchText.isEmpty else { return }
         
         self.addIndicator()
         
         if let image = self.selectedImage {
-            messages.append("You: \(searchText)")
+    
+            messages.append("\n\n\n\n\n\n\n\n\n\nYou: \(searchText)")
            
             Task {
                 do {
@@ -242,7 +251,7 @@ class AiViewController: UIViewController {
                     guard let response = result.text else { return }
                     
                     DispatchQueue.main.async {
-                        self.messages.append("OpenAI: \(response)")
+                        self.messages.append("Good Food: \(response)")
                         self.updateContentLabel()
                         self.indicator.removeFromSuperview()
                     }
@@ -253,15 +262,20 @@ class AiViewController: UIViewController {
                     }
                 }
             }
+            
+            self.selectedImage = nil
+            
         } else {
+            
             messages.append("You: \(searchText)")
+            
             Task {
                 do {
                     let result = try await model.generateContent(searchText)
                     guard let response = result.text else { return }
                     
                     DispatchQueue.main.async {
-                        self.messages.append("OpenAI: \(response)")
+                        self.messages.append("Good Food: \(response)")
                         self.updateContentLabel()
                         self.indicator.removeFromSuperview()
                     }
@@ -295,6 +309,26 @@ class AiViewController: UIViewController {
         }
         indicator.startAnimation()
     }
+    
+    private func setupAnimationView() {
+        
+        animationView = .init(name: "aiAnimationView")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        
+        view.addSubview(animationView)
+        
+        animationView.snp.makeConstraints{
+            $0.top.equalTo(comp2.snp.bottom).offset(24)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(65)
+        }
+        
+        animationView.play()
+        
+    }
+    
 }
 
 extension AiViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -302,7 +336,39 @@ extension AiViewController: UIImagePickerControllerDelegate & UINavigationContro
         if let pickedImage = info[.originalImage] as? UIImage {
             self.selectedImage = pickedImage
         }
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: {
+            
+           
+            /*
+             
+             Burada seçilen image alınıp doğrudan gösterilebilir.
+             
+             */
+            
+            guard let img = self.selectedImage else { return }
+            
+            let view = UIImageView()
+            view.backgroundColor = .clear
+            view.layer.cornerRadius = 15
+            view.layer.masksToBounds = true
+            view.contentMode = .scaleAspectFill
+            view.image = img
+            
+            self.scrollContentView.addSubview(view)
+            
+            self.view.layoutIfNeeded()
+            let scrollContentViewTop = self.scrollContentView.frame.origin.y
+            let contentLabelTop = self.contentLabel.frame.origin.y
+            let heightDifference = contentLabelTop - scrollContentViewTop
+            
+            view.snp.makeConstraints{
+                $0.width.height.equalTo(175)
+                $0.leading.equalToSuperview().offset(24)
+                $0.top.equalToSuperview().offset((self.getIdentifierHeight()) + (heightDifference))
+                
+            }
+
+        })
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

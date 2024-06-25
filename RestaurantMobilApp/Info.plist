@@ -2,12 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>&lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;</key>
-	<string>&lt;array&gt;
-    &lt;string&gt;youtube&lt;/string&gt;
-&lt;/array&gt;</string>
-	<key>&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</key>
-	<string>App needs gallery to access photos</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.191109498785-5rle8csqhgnunv94q3lgmo2ndp659q7b</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>191109498785-5rle8csqhgnunv94q3lgmo2ndp659q7b.apps.googleusercontent.com</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string></string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

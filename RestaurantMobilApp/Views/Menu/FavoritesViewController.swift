@@ -15,6 +15,7 @@ class FavoritesViewController: UIViewController {
     
     weak var coordinator: MainCoordinatorProtocol?
     var meals = [FavoriteDto]()
+    lazy private var indicator = customActivityIndicatorViewComponent()
     
     
     lazy private var icon = UIImageView().then{
@@ -60,19 +61,34 @@ extension FavoritesViewController {
         view.backgroundColor = .white
         self.navigationItem.title = "Favorites"
         isLoading = true
-        self.fetchData()
+        addIndicator()
+    }
+    
+    private func addIndicator() {
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(50)
+            $0.width.height.equalTo(50)
+        }
+        indicator.startAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        self.fetchData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isLoading = false
+            self.indicator.removeFromSuperview()
         }
     }
+
     
     private func setupUI() {
         view.addSubview(collectionView)
@@ -110,6 +126,7 @@ extension FavoritesViewController {
     }
     
     func fetchData() {
+        self.meals.removeAll()
         
         let dataService = DataService()
         let local = LocalDataBaseProcess()
@@ -197,16 +214,38 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.meals[sourceIndexPath.row]
+        meals.remove(at: sourceIndexPath.row)
+        meals.insert(movedObject, at: destinationIndexPath.row)
+    }
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let meal = self.meals[indexPath.row]
         
-        coordinator?.navigateCategoryMeal(categoryMealDto:
-                                            CategoryMealDto(mealName: meal.mealName,
-                                                            mealId: meal.mealId,
-                                                            mealURL: meal.imageURL))
-                                          
+        let alert = UIAlertController(title: "Remove Meal", message: "Do you want to remove this meal from your favorites?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Go Detail", style: .destructive, handler: { _ in
+            self.coordinator?.navigateCategoryMeal(categoryMealDto:
+                                                CategoryMealDto(mealName: meal.mealName,
+                                                                mealId: meal.mealId,
+                                                                mealURL: meal.imageURL))
+        }))
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { _ in
+            self.meals.remove(at: indexPath.row)
+            collectionView.deleteItems(at: [indexPath])
+            LocalDataBaseProcess().removeDATA(key: meal.mealName)
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 
 }
-
 

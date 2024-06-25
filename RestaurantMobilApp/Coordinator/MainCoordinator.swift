@@ -82,6 +82,13 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func navigateLogin() {
+        let vc = LoginViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     func navigateCategoryMeal(categoryMealDto: CategoryMealDto) {
         let coordinator = FirstDetailViewCoordinator(navigationController: navigationController)
         self.childCoordinators.append(coordinator)
@@ -92,6 +99,18 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         let coordinator = FirstDetailViewCoordinator(navigationController: navigationController)
         self.childCoordinators.append(coordinator)
         coordinator.navigateCategoryMealIngredients(categoryMealIngredientsDto: categoryMealIngredientsDto)
+    }
+    
+    func navigateForgetPassword() {
+        let coordinator = LoginCoordinator(navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.navigateForgetPassword()
+    }
+    
+    func navigateSignUp() {
+        let coordinator = LoginCoordinator(navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.navigateSignUp()
     }
     
 }

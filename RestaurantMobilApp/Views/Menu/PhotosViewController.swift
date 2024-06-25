@@ -23,12 +23,12 @@ extension PhotosViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.backgroundColor = .white
-        self.navigationItem.title = "Photos"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
+        view.backgroundColor = .white
+        self.navigationItem.title = "Photos"
     }
     
     private func setupUI() {

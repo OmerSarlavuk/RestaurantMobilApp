@@ -12,5 +12,9 @@ target 'RestaurantMobilApp' do
   pod 'Then'
   pod 'Kingfisher'
   pod 'UIView-Shimmer'
+  pod 'lottie-ios'
+  pod 'GoogleMaps'
+  pod 'SpreadsheetView' 
+  pod 'GoogleSignIn'
 
 end

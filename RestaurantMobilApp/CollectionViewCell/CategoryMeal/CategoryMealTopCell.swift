@@ -132,11 +132,18 @@ extension CategoryMealTopCell {
             
         case 1:
             
+            let local = LocalDataBaseProcess()
             guard let dto = favoriteDto else { return }
             
-            let local = LocalDataBaseProcess()
+            if button.isSelected {
             
-            local.setDATA(value: "\(dto.imageURL)\r\n\(dto.mealName)\r\n\(dto.mealId)", key: dto.mealName)
+                local.setDATA(value: "\(dto.imageURL)\r\n\(dto.mealName)\r\n\(dto.mealId)", key: dto.mealName)
+                
+            } else {
+                
+                local.removeDATA(key: dto.mealName)
+                
+            }
             
         case 2:
             print()

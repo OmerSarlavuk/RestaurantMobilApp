@@ -1,30 +1,27 @@
 //
-//  ResevervationViewController.swift
+//  SignUpViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 10.06.2024.
+//  Created by Ahlatci on 25.06.2024.
 //
 
 import UIKit
 import SnapKit
 
 
-class ResevervationViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
+    weak var coordinator: LoginCoordinatorProtocol?
     
-    weak var coordinator: MainCoordinatorProtocol?
     
     
 }
 
-
-extension ResevervationViewController {
+extension SignUpViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.backgroundColor = .white
-        self.navigationItem.title = "Reservation"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +30,8 @@ extension ResevervationViewController {
     
     private func setupUI() {
         
+        view.backgroundColor = .white
+        self.navigationItem.title = "Sign Up"
         setupConstraints()
     }
     
