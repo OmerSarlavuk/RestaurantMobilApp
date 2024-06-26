@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     
     weak var coordinator: MainCoordinatorProtocol?
     
+    lazy private var indicator = customActivityIndicatorViewComponent()
+    
     lazy private var scrollView = UIScrollView().then{
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
@@ -169,6 +171,16 @@ extension LoginViewController {
         setupConstraints()
     }
     
+    private func addIndicator() {
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(50)
+            $0.width.height.equalTo(50)
+        }
+        indicator.startAnimation()
+    }
+    
     private func setupConstraints() {
         scrollView.snp.makeConstraints{
             $0.edges.equalToSuperview()
@@ -296,7 +308,13 @@ extension LoginViewController {
                 debugPrint("fullName: \(fn), emailAddress: \(ea), givenName: \(gn), familyName: \(on)")
                 //MARK: Burada bizim kontrollerimizden geçip servisten gelen kullanıcı verisi ile kıyaslanmalı ona göre geçtirilmeli
                 
-                
+                self.addIndicator()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+                    guard let self = self else { return }
+                    self.indicator.removeFromSuperview()
+                    LocalDataBaseProcess().setDATA(value: "login", key: "isLogin")
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
             
         }
@@ -313,6 +331,14 @@ extension LoginViewController {
             let decodeText = algorithm.decryptText(encryptedText: encodeText, key: key)
             
             print("password -> \(password)\nencode -> \(encodeText)\ndecode -> \(decodeText)")
+            
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                LocalDataBaseProcess().setDATA(value: "login", key: "isLogin")
+                self.navigationController?.popViewController(animated: true)
+            }
             
         }
         

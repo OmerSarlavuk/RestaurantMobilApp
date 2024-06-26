@@ -17,7 +17,9 @@ class FirstViewController: UIViewController {
     private var categories = [Category]()
     private var filteredCategories = [Category]()
     private var meals = [Meal]()
+    private var time = 0.2
     
+    lazy private var indicator = customActivityIndicatorViewComponent()
     
     lazy private var icon = UIImageView().then{
         $0.image = .noData
@@ -68,7 +70,13 @@ class FirstViewController: UIViewController {
     lazy private var item1: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .reservation, title: .StringContentinLocalizable.menuReservation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigateReservation()
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateReservation()
+            }
         }))
         return item
     }()
@@ -76,7 +84,13 @@ class FirstViewController: UIViewController {
     lazy private var item2: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .location, title: .StringContentinLocalizable.menuLocation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigateLocation()
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateLocation()
+            }
         }))
         return item
     }()
@@ -84,7 +98,13 @@ class FirstViewController: UIViewController {
     lazy private var item3: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .photos, title: .StringContentinLocalizable.menuPhotos.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigatePhotos()
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigatePhotos()
+            }
         }))
         return item
     }()
@@ -92,7 +112,13 @@ class FirstViewController: UIViewController {
     lazy private var item4: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .favorite, title: .StringContentinLocalizable.menuFavorites.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigateFavorite()
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateFavorite()
+            }
         }))
         return item
     }()
@@ -100,15 +126,32 @@ class FirstViewController: UIViewController {
     lazy private var item5: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
         item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .help, title: .StringContentinLocalizable.menuAbout.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigateAbout()
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateAbout()
+            }
         }))
         return item
     }()
     
     lazy private var item6: MenuItemViewComponent = {
        let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .login, title: .StringContentinLocalizable.login.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
-            self.coordinator?.navigateLogin()
+        return item
+    }()
+    
+    lazy private var item7: MenuItemViewComponent = {
+       let item = MenuItemViewComponent()
+        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .basket, title: "Basket", font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateBasket()
+            }
         }))
         return item
     }()
@@ -201,10 +244,45 @@ extension FirstViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.isLoading = false
         }
+        isLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    private func isLogin() {
+        
+        let value = LocalDataBaseProcess().getDATA(key: "isLogin")
+        print("isLogin -> \(value)")
+        var icon: UIImage
+        var text: String = ""
+        
+        if value == "login" {
+            icon = .logout
+            text = "Logout"
+            menuStackView.insertArrangedSubview(item7, at: 5)
+        } else {
+            icon = .login
+            text = .StringContentinLocalizable.login.rawValue
+            item7.removeFromSuperview()
+        }
+        
+        item6.configure(viewModel: MenuItemViewComponent.ViewModel(icon: icon, title: text, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+            
+            if text != "Login" {
+                LocalDataBaseProcess().removeDATA(key: "isLogin")
+            }
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+                guard let self = self else { return }
+                self.indicator.removeFromSuperview()
+                self.parentView.removeFromSuperview()
+                self.coordinator?.navigateLogin()
+            }
+        }))
+        
+        
     }
     
     private func setupUI() {
@@ -291,6 +369,7 @@ extension FirstViewController {
         if gesture.state == .ended {
             
             if translation.x > 0 {
+                self.view.endEditing(true)
                 showMenu()
             } else {
                 parentView.removeFromSuperview()
@@ -363,6 +442,16 @@ extension FirstViewController {
         
     }
     
+    private func addIndicator() {
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(50)
+            $0.width.height.equalTo(50)
+        }
+        indicator.startAnimation()
+    }
+    
 }
 extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
             
@@ -410,16 +499,20 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = self.filteredCategories[indexPath.row]
         
-        languageOptions.removeFromSuperview()
-        self.menuView.removeFromSuperview()
-        self.view.endEditing(true)
-
-        coordinator?.navigateFirstDetail(firstDetailDto: FirstDetailDto(
-            categoryDescription: category.strCategoryDescription,
-            imageURL: category.strCategoryThumb,
-            categoryName: category.strCategory)
-        )
-        
+        self.addIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
+            guard let self = self else { return }
+            self.languageOptions.removeFromSuperview()
+            self.menuView.removeFromSuperview()
+            self.view.endEditing(true)
+            self.indicator.removeFromSuperview()
+            self.parentView.removeFromSuperview()
+            self.coordinator?.navigateFirstDetail(firstDetailDto: FirstDetailDto(
+                categoryDescription: category.strCategoryDescription,
+                imageURL: category.strCategoryThumb,
+                categoryName: category.strCategory)
+            )
+        }
     }
 }
 extension FirstViewController : UISearchBarDelegate {

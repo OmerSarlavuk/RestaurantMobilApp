@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     
     
     
+    
 }
 
 extension SignUpViewController {
@@ -29,7 +30,6 @@ extension SignUpViewController {
     }
     
     private func setupUI() {
-        
         view.backgroundColor = .white
         self.navigationItem.title = "Sign Up"
         setupConstraints()

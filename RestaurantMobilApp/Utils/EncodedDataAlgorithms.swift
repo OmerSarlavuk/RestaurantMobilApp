@@ -7,6 +7,14 @@
 
 import UIKit
 
+//MARK: Data Encode and Decode Algorithms
+
+/*
+ In Vigenere encryption, encryption occurs only through the letters of the alphabet. Its shortcoming is that it ignores the characters. Here, encryption is performed for chars (characters, letters, symbols) with decimal range [33-126] in the ASCII table. This means that data is encrypted no matter how. Here, the range [33-126] is placed as rows and columns. Then, it decreases and changes, one under the other, until the last one reaches the beginning. Data is written overlapping with a predetermined key, and each overlapping character is multiplied into the resulting vigenere matrix. The new corresponding character is now an encrypted character.
+ 
+ //MARK: vigenere matris only alphabet -> https://miro.medium.com/v2/resize:fit:1400/format:webp/1*VYeVYpg4FsVuNrU_ziRdMw.png
+ 
+ */
 
 class EncodedDataAlgorithms {
     

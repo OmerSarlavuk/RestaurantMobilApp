@@ -2,7 +2,7 @@
 //  APIKey.swift
 //  ChatWithGemini
 //
-//  Created by Etisha Garg on 03/05/24.
+//  Created by Ahlatci on 12.06.24.
 //
 
 import Foundation

@@ -13,6 +13,10 @@ import GoogleGenerativeAI
 import Lottie
 
 
+/*
+ I want to make dessert is 'Semolina milk dessert', but I don't know what ingredients to use. Can you give me the ingredients and the recipe?
+ */
+
 class AiViewController: UIViewController {
     
     weak var coordinator: MainCoordinatorProtocol?

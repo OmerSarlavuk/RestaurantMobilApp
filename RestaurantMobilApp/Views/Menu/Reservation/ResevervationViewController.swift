@@ -179,6 +179,15 @@ extension ResevervationViewController: SpreadsheetViewDataSource, SpreadsheetVie
         debugPrint("öge -> \(data[f-1][t-1])")//burada direk tıklanan öge içerindeki değeri ele alıyoruz!
         
         
+        let value = LocalDataBaseProcess().getDATA(key: "isLogin")
+        print("Res_isLogin -> \(value)")
+        
+        if value == "login" {
+            let alert = UIAlertController(title: "SELECTEC ITEM", message: "\(data[f-1][t-1])", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+        
         let alert = UIAlertController(title: "LOGIN FAILED", message: "You must be logged in to make a reservation", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)

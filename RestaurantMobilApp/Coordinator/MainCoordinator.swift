@@ -82,6 +82,13 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func navigateBasket() {
+        let vc = BasketViewController()
+        vc.coordinator = self
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     func navigateLogin() {
         let vc = LoginViewController()
         vc.coordinator = self
