@@ -27,6 +27,9 @@ class ResevervationViewController: UIViewController {
                  "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 PM"]
     let evenRowColor = UIColor(red: 0.914, green: 0.914, blue: 0.906, alpha: 1)
     let oddRowColor: UIColor = .white
+    
+    //Bu datanın servisten veya harici bir yerden gelmesi gerekli durağan veri olduğu için bu sayafa da tıklanınca vs reservation al gibi herhangi bir işlem yapılmamıştır. Sadece alertte login olduysa içerik basılmıştır.
+    
     var data = [
         ["full", "full", "4 tables are empty", "full", "full", "full", "2 tables are empty", "full", "full", "7 tables are empty", "full", "full", "full", "full", "full", "12 tables are empty", "full", "full", "full", "full"],//monday
         ["full", "full", "full", "3 tables are empty", "full", "full", "2 tables are empty", "full", "full", "full", "full", "full", "full", "full", "full", "full", "full", "full", "full", "full"],//tuesday

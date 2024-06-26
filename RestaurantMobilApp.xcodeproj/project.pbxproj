@@ -16,6 +16,7 @@
 		FB11369D2C2AB803001BF7AD /* EncodedDataAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11369C2C2AB803001BF7AD /* EncodedDataAlgorithms.swift */; };
 		FB1136A12C2AD5E4001BF7AD /* Encyrpt-Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */; };
 		FB1136A32C2AD646001BF7AD /* EncyrptKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */; };
+		FB238CC32C2C5D5A006EBC94 /* BasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB238CC22C2C5D5A006EBC94 /* BasketItemCell.swift */; };
 		FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F112C2C1733C500D45BA9 /* AiViewController.swift */; };
 		FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */; };
 		FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */; };
@@ -114,6 +115,7 @@
 		FB11369C2C2AB803001BF7AD /* EncodedDataAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedDataAlgorithms.swift; sourceTree = "<group>"; };
 		FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Encyrpt-Key.plist"; sourceTree = "<group>"; };
 		FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyrptKEY.swift; sourceTree = "<group>"; };
+		FB238CC22C2C5D5A006EBC94 /* BasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemCell.swift; sourceTree = "<group>"; };
 		FB3F112C2C1733C500D45BA9 /* AiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiViewController.swift; sourceTree = "<group>"; };
 		FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinator.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		FB06ED8D2C08BB5D00690238 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FB238CC12C2C5D4F006EBC94 /* Basket */,
 				FBBE94A72C108896004A4FE2 /* CategoryMeal */,
 				FBFDDB712C0DE20C00DB9DCD /* Meal */,
 				FBFDDB702C0DE20600DB9DCD /* Category */,
@@ -241,6 +244,14 @@
 				FBBE94A52C10508C004A4FE2 /* MealDetailViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FB238CC12C2C5D4F006EBC94 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				FB238CC22C2C5D5A006EBC94 /* BasketItemCell.swift */,
+			);
+			path = Basket;
 			sourceTree = "<group>";
 		};
 		FB7D5AED2C0F220A00C8D9BF /* ChildCoordinators */ = {
@@ -693,6 +704,7 @@
 				FB98B4572C182450001BB669 /* APIKey.swift in Sources */,
 				FBBB4F2B2C1712170070D7C0 /* LocationViewController.swift in Sources */,
 				FB7EE8362C0A0084001B7D78 /* FirstDetailViewController.swift in Sources */,
+				FB238CC32C2C5D5A006EBC94 /* BasketItemCell.swift in Sources */,
 				FBBB4F2F2C1712590070D7C0 /* FavoritesViewController.swift in Sources */,
 				FBBB4F262C16EFDC0070D7C0 /* CategoryMealIngredientsDto.swift in Sources */,
 				FBE5786C2C2B006100C14534 /* ForgetPasswordViewController.swift in Sources */,

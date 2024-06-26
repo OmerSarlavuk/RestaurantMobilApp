@@ -91,6 +91,19 @@ class CategoryMealViewController: UIViewController {
         return button
     }()
     
+    lazy private var addedBasket: UIButton = {
+       let button = UIButton()
+        button.setTitle("Add to Basket +", for: .normal)
+        button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+        button.setTitleColor(.iconandIdentifierViewComponentColor1, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 0.3
+        button.layer.borderColor = UIColor.primaryThemeandText.cgColor
+        return button
+    }()
+    
     lazy private var caloriImage = UIImageView().then{
         $0.image = .checkList
     }
@@ -159,6 +172,7 @@ extension CategoryMealViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
+        isLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -166,6 +180,28 @@ extension CategoryMealViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isLoading = false
         }
+    
+        isLogin()
+    }
+    
+    private func isLogin() {
+        
+        let value = LocalDataBaseProcess().getDATA(key: "isLogin")
+        
+        print("CategoryMEAL_isLogin -> \(value)")
+        
+        if value == "login" {
+            
+            view.addSubview(addedBasket)
+            addedBasket.snp.makeConstraints{
+                $0.height.equalTo(40)
+                $0.leading.equalTo(caloriText.snp.trailing).offset(16)
+                $0.trailing.equalTo(ingredients.snp.trailing).offset(-16)
+                $0.top.equalTo(ingredients.snp.bottom).offset(10)
+            }
+            
+        }
+        
     }
     
     private func setupUI() {
@@ -392,6 +428,16 @@ extension CategoryMealViewController {
         if button == ingredients {
             coordinator?.navigateCategoryMealIngredients(categoryMealIngredientsDto: CategoryMealIngredientsDto(strInstructions: mealDetail.strInstructions, youtubeURL: mealDetail.strYoutube))
         }
+        
+        if button == addedBasket {
+            
+            //Burada baskete ekleme işlemi yapılacak ilgili öge zaten dolu ve seçili olacaktır.
+            
+            print("Addet to basket button Tapped!")
+            
+            
+        }
+        
         
     }
     
