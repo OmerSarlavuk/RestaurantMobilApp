@@ -22,6 +22,7 @@ protocol MainCoordinatorProtocol : AnyObject {
     func navigateForgetPassword()
     func navigateSignUp()
     func navigateBasket()
+    func navigateBasketSubscription()
     
 }
 

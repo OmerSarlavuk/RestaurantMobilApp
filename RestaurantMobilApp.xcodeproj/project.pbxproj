@@ -17,6 +17,10 @@
 		FB1136A12C2AD5E4001BF7AD /* Encyrpt-Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */; };
 		FB1136A32C2AD646001BF7AD /* EncyrptKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */; };
 		FB238CC32C2C5D5A006EBC94 /* BasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB238CC22C2C5D5A006EBC94 /* BasketItemCell.swift */; };
+		FB259C632C2DA0A700ECFE63 /* BasketSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB259C622C2DA0A700ECFE63 /* BasketSubscriptionViewController.swift */; };
+		FB259C672C2DA4EC00ECFE63 /* subscription.json in Resources */ = {isa = PBXBuildFile; fileRef = FB259C662C2DA4EC00ECFE63 /* subscription.json */; };
+		FB259C692C2DA7DA00ECFE63 /* subscribeAnimationView.json in Resources */ = {isa = PBXBuildFile; fileRef = FB259C682C2DA7DA00ECFE63 /* subscribeAnimationView.json */; };
+		FB259C6B2C2DAA4D00ECFE63 /* paymentOptionsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB259C6A2C2DAA4D00ECFE63 /* paymentOptionsViewComponent.swift */; };
 		FB3F112D2C1733C500D45BA9 /* AiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F112C2C1733C500D45BA9 /* AiViewController.swift */; };
 		FB7D5AEF2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */; };
 		FB7D5AF12C0F224000C8D9BF /* FirstDetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */; };
@@ -116,6 +120,10 @@
 		FB1136A02C2AD5E4001BF7AD /* Encyrpt-Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Encyrpt-Key.plist"; sourceTree = "<group>"; };
 		FB1136A22C2AD646001BF7AD /* EncyrptKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyrptKEY.swift; sourceTree = "<group>"; };
 		FB238CC22C2C5D5A006EBC94 /* BasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemCell.swift; sourceTree = "<group>"; };
+		FB259C622C2DA0A700ECFE63 /* BasketSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketSubscriptionViewController.swift; sourceTree = "<group>"; };
+		FB259C662C2DA4EC00ECFE63 /* subscription.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subscription.json; sourceTree = "<group>"; };
+		FB259C682C2DA7DA00ECFE63 /* subscribeAnimationView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subscribeAnimationView.json; sourceTree = "<group>"; };
+		FB259C6A2C2DAA4D00ECFE63 /* paymentOptionsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentOptionsViewComponent.swift; sourceTree = "<group>"; };
 		FB3F112C2C1733C500D45BA9 /* AiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiViewController.swift; sourceTree = "<group>"; };
 		FB7D5AEE2C0F223600C8D9BF /* FirstDetailViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		FB7D5AF02C0F224000C8D9BF /* FirstDetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewCoordinator.swift; sourceTree = "<group>"; };
@@ -254,6 +262,15 @@
 			path = Basket;
 			sourceTree = "<group>";
 		};
+		FB259C612C2DA08800ECFE63 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				FBC63B142C2C4547008DA4C0 /* BasketViewController.swift */,
+				FB259C622C2DA0A700ECFE63 /* BasketSubscriptionViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
 		FB7D5AED2C0F220A00C8D9BF /* ChildCoordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,13 +335,13 @@
 		FBBB4F272C1711A60070D7C0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				FB259C612C2DA08800ECFE63 /* Basket */,
 				FBE5786A2C2B004F00C14534 /* Login */,
 				FBCB72D12C1C5244008A733E /* Reservation */,
 				FBBB4F2A2C1712170070D7C0 /* LocationViewController.swift */,
 				FBBB4F2C2C1712420070D7C0 /* PhotosViewController.swift */,
 				FBBB4F2E2C1712590070D7C0 /* FavoritesViewController.swift */,
 				FBBB4F302C1712710070D7C0 /* AboutViewController.swift */,
-				FBC63B142C2C4547008DA4C0 /* BasketViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -350,6 +367,8 @@
 		FBC63B0E2C2BFE98008DA4C0 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				FB259C682C2DA7DA00ECFE63 /* subscribeAnimationView.json */,
+				FB259C662C2DA4EC00ECFE63 /* subscription.json */,
 				FBC63B122C2C0B4B008DA4C0 /* successAnimationView.json */,
 				FBC63B102C2C06EE008DA4C0 /* securityAnimationView.json */,
 				FBC63B052C2BEAB2008DA4C0 /* verificationAnimationView.json */,
@@ -438,6 +457,7 @@
 				FBBB4F1B2C16DF780070D7C0 /* TitleandValueViewComponent.swift */,
 				FBD695122C173FA800C3A4CE /* LabelandGeneralViewComponent.swift */,
 				FBB1F6272C19783D00700E72 /* InstructionsStepViewComponent.swift */,
+				FB259C6A2C2DAA4D00ECFE63 /* paymentOptionsViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -606,12 +626,14 @@
 				FBCB72C82C1C2225008A733E /* aiAnimationView.json in Resources */,
 				FBCB72D02C1C2D6A008A733E /* darkMap.json in Resources */,
 				FBE578752C2B071C00C14534 /* emailAnimation.json in Resources */,
+				FB259C692C2DA7DA00ECFE63 /* subscribeAnimationView.json in Resources */,
 				FBC63B132C2C0B4B008DA4C0 /* successAnimationView.json in Resources */,
 				FBCFDEDB2C0888F700B87638 /* Base in Resources */,
 				FB98B4542C1823A1001BB669 /* GenerativeAi-Info.plist in Resources */,
 				FBA6FF512C0EF7BC00E0CF7D /* Localizable.xcstrings in Resources */,
 				FBC63B112C2C06EE008DA4C0 /* securityAnimationView.json in Resources */,
 				FBC63B062C2BEAB2008DA4C0 /* verificationAnimationView.json in Resources */,
+				FB259C672C2DA4EC00ECFE63 /* subscription.json in Resources */,
 				FB1136A12C2AD5E4001BF7AD /* Encyrpt-Key.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +719,7 @@
 				FB06ED8F2C08BB7200690238 /* CategoriesCell.swift in Sources */,
 				FBFDDB732C0DE22000DB9DCD /* MealCategoryCell.swift in Sources */,
 				FBC63B152C2C4547008DA4C0 /* BasketViewController.swift in Sources */,
+				FB259C6B2C2DAA4D00ECFE63 /* paymentOptionsViewComponent.swift in Sources */,
 				FBCFDEFA2C088CEB00B87638 /* Extension+UIImageView.swift in Sources */,
 				FBBB4F242C16EF250070D7C0 /* CategoryMealIngredientsViewController.swift in Sources */,
 				FBFDDB6B2C0DCEBF00DB9DCD /* Meal.swift in Sources */,
@@ -747,6 +770,7 @@
 				FBBE94A62C10508C004A4FE2 /* MealDetailViewModel.swift in Sources */,
 				FB1136A32C2AD646001BF7AD /* EncyrptKEY.swift in Sources */,
 				FBCFDEFD2C088CEB00B87638 /* Extension+UIButton.swift in Sources */,
+				FB259C632C2DA0A700ECFE63 /* BasketSubscriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

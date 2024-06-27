@@ -17,6 +17,8 @@ class CategoryMealViewController: UIViewController {
     var categoryMealDto: CategoryMealDto?
     var mealDetail: MealDetailViewModel.MealDetailClearModel?
     
+    lazy private var indicator = customActivityIndicatorViewComponent()
+    
     lazy private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -94,6 +96,7 @@ class CategoryMealViewController: UIViewController {
     lazy private var addedBasket: UIButton = {
        let button = UIButton()
         button.setTitle("Add to Basket +", for: .normal)
+        button.setTitle("Remove to basket -", for: .selected)
         button.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         button.setTitleColor(.iconandIdentifierViewComponentColor1, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
@@ -184,13 +187,27 @@ extension CategoryMealViewController {
         isLogin()
     }
     
+    private func addIndicator() {
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints{
+            $0.leading.equalTo(addedBasket.snp.trailing).offset(2)
+            $0.centerY.equalTo(addedBasket.snp.centerY)
+            $0.width.height.equalTo(24)
+        }
+        indicator.startAnimation()
+    }
+    
     private func isLogin() {
+        
+        guard let dto = categoryMealDto else { return }
         
         let value = LocalDataBaseProcess().getDATA(key: "isLogin")
         
-        print("CategoryMEAL_isLogin -> \(value)")
-        
         if value == "login" {
+            
+            let check = LocalDataBaseProcess().getDATA(key: "\(dto.mealName)basket")
+            
+            addedBasket.isSelected = !check.isEmpty ? true : false
             
             view.addSubview(addedBasket)
             addedBasket.snp.makeConstraints{
@@ -431,11 +448,25 @@ extension CategoryMealViewController {
         
         if button == addedBasket {
             
-            //Burada baskete ekleme işlemi yapılacak ilgili öge zaten dolu ve seçili olacaktır.
+            //ilk etapta false sonra true oluyor
             
-            print("Addet to basket button Tapped!")
+            button.isSelected = !button.isSelected
             
-            
+            let local = LocalDataBaseProcess()
+            guard let dto = self.categoryMealDto else { return }
+            self.addIndicator()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.indicator.removeFromSuperview()
+                if button.isSelected { //false iken
+                    local.setDATA(value: "\(dto.mealURL)\r\n\(dto.mealName)\r\n\(dto.mealId)", key: "\(dto.mealName)basket")
+                    local.setDATA(value: "1", key: "\(dto.mealName)piece")
+                    //Burada baskete ekleme işlemi yapılacak ilgili öge zaten dolu ve seçili olacaktır.
+                } else {
+                    local.removeDATA(key: "\(dto.mealName)basket")
+                    local.removeDATA(key: "\(dto.mealName)piece")
+                }
+            }
+        
         }
         
         

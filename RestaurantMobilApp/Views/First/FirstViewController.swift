@@ -236,7 +236,7 @@ extension FirstViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
-        print(UserDefaults.standard.dictionaryRepresentation())
+//        print(UserDefaults.standard.dictionaryRepresentation())
         
     }
     
