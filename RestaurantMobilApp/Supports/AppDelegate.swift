@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 30.05.2024.
+//  Created by Ö.Ş on 30.05.2024.
 //
 
 import UIKit

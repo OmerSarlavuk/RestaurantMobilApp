@@ -2,7 +2,7 @@
 //  DataService.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 30.05.2024.
+//  Created by Ö.Ş on 30.05.2024.
 //
 
 import UIKit
@@ -103,10 +103,8 @@ class DataService: DataServiceProtocol {
                 
                 guard let response = result.text else { return }
                 
-                debugPrint("response -> \(response)")
-                
             } catch {
-                debugPrint(" GE!MI!NI")
+                debugPrint(error.localizedDescription)
             }
             
         }

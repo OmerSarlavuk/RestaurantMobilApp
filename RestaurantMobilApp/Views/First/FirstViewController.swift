@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 30.05.2024.
+//  Created by Ö.Ş on 30.05.2024.
 //
 
 import UIKit
@@ -202,9 +202,6 @@ class FirstViewController: UIViewController {
     lazy private var horizontalLine = UIView().then{
         $0.backgroundColor = .lightGray
     }
-    
-    
-    lazy private var languageOptions = LanguageSelectionsViewComponent()
  
     
     lazy private var collectionView: UICollectionView = {
@@ -256,7 +253,6 @@ extension FirstViewController {
     private func isLogin() {
         
         let value = LocalDataBaseProcess().getDATA(key: "isLogin")
-        print("isLogin -> \(value)")
         var icon: UIImage
         var text: String = ""
         
@@ -333,10 +329,12 @@ extension FirstViewController {
         
         if button == menu {
             showMenu()
+            self.view.endEditing(true)
         }
         
         if button == ai {
             self.coordinator?.navigateAi()
+            self.view.endEditing(true)
         }
         
     }
@@ -504,7 +502,6 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         self.addIndicator()
         DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
             guard let self = self else { return }
-            self.languageOptions.removeFromSuperview()
             self.menuView.removeFromSuperview()
             self.view.endEditing(true)
             self.indicator.removeFromSuperview()

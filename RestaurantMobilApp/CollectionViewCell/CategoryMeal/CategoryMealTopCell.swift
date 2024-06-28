@@ -2,7 +2,7 @@
 //  CategoryMealTopCell.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 5.06.2024.
+//  Created by Ö.Ş on 5.06.2024.
 //
 
 import UIKit
@@ -12,11 +12,16 @@ import Then
 import UIView_Shimmer
 
 
+protocol orderButton: AnyObject {
+    func orderButtonTapped(dto: FavoriteDto)
+}
+
 class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
  
     static let key = "CategoryMealTopCell"
     var shimmeringAnimatedItems: [UIView] {[mealImage, favoriteView, orderView ]}
     var favoriteDto: FavoriteDto?
+    weak var delegate: orderButton?
     
     lazy private var parentView = UIView().then{
         $0.backgroundColor = .clear
@@ -52,7 +57,7 @@ class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
     lazy private var orderButton: UIButton = {
         let button = UIButton().then{
             $0.backgroundColor = .clear
-            $0.setImage(.moreDot, for: .normal)
+            $0.setImage(.share, for: .normal)
             $0.tag = 2
             $0.addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         }
@@ -127,13 +132,13 @@ extension CategoryMealTopCell {
         //case 1: Favorite, case 2: Order
         
         button.isSelected = !button.isSelected
+        guard let dto = favoriteDto else { return }
         
         switch button.tag {
             
         case 1:
             
             let local = LocalDataBaseProcess()
-            guard let dto = favoriteDto else { return }
             
             if button.isSelected {
             
@@ -146,7 +151,9 @@ extension CategoryMealTopCell {
             }
             
         case 2:
-            print("order!!!dot")
+            
+            delegate?.orderButtonTapped(dto: dto)
+        
         default:
             print()
             

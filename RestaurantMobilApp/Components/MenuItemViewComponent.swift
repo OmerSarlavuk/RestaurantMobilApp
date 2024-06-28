@@ -2,7 +2,7 @@
 //  MenuViewComponent.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 31.05.2024.
+//  Created by Ö.Ş on 31.05.2024.
 //
 
 import UIKit

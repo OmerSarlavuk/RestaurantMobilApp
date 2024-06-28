@@ -2,7 +2,7 @@
 //  FirstDetailDto.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 4.06.2024.
+//  Created by Ö.Ş on 4.06.2024.
 //
 
 import Foundation

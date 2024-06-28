@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 25.06.2024.
+//  Created by Ö.Ş on 25.06.2024.
 //
 
 import UIKit

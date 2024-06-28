@@ -2,7 +2,7 @@
 //  extension + UIViewController.swift
 //  DenemeProje
 //
-//  Created by Ahlatci on 21.05.2024.
+//  Created by Ö.Ş on 21.05.2024.
 //
 
 import UIKit

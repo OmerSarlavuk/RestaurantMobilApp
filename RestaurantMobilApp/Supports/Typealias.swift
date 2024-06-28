@@ -2,7 +2,7 @@
 //  Typealias.swift
 //  DenemeProje
 //
-//  Created by Ahlatci on 6.05.2024.
+//  Created by Ö.Ş on 6.05.2024.
 //
 
 public typealias VoidCallback = () -> Void

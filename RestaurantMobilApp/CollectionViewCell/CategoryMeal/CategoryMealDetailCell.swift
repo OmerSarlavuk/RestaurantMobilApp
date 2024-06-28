@@ -2,7 +2,7 @@
 //  CategoryMealDetailCell.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 6.06.2024.
+//  Created by Ö.Ş on 6.06.2024.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  Coordinator.swift
 //  CoordinatorDemo
 //
-//  Created by Bedirhan Turhan on 24.12.2023.
+//  Created by Ö.Ş on 24.12.2023.
 //
 
 import UIKit

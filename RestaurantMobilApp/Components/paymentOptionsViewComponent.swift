@@ -2,7 +2,7 @@
 //  paymentOptionsViewComponent.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 27.06.2024.
+//  Created by Ö.Ş on 27.06.2024.
 //
 
 import UIKit
@@ -38,8 +38,9 @@ class paymentOptionsViewComponent: UIView {
         let textColorD: UIColor
         let componentRadius: CGFloat
         let componentBackgroundColor: UIColor
+        let handleTap: VoidCallback
         
-        init(time: String, fontS: UIFont, textColorS: UIColor, price: String, fontP: UIFont, textColorP: UIColor, discount: String, fontD: UIFont, textColorD: UIColor, componentRadius: CGFloat, componentBackgroundColor: UIColor) {
+        init(time: String, fontS: UIFont, textColorS: UIColor, price: String, fontP: UIFont, textColorP: UIColor, discount: String, fontD: UIFont, textColorD: UIColor, componentRadius: CGFloat, componentBackgroundColor: UIColor, handleTap: @escaping VoidCallback) {
             self.time = time
             self.fontS = fontS
             self.textColorS = textColorS
@@ -51,6 +52,7 @@ class paymentOptionsViewComponent: UIView {
             self.textColorD = textColorD
             self.componentRadius = componentRadius
             self.componentBackgroundColor = componentBackgroundColor
+            self.handleTap = handleTap
         }
         
     }

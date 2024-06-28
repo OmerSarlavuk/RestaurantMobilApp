@@ -2,7 +2,7 @@
 //  MainCoordinator.swift
 //  DenemeProje
 //
-//  Created by Ahlatci on 21.05.2024.
+//  Created by Ö.Ş on 21.05.2024.
 //
 
 import UIKit
@@ -125,6 +125,12 @@ class MainCoordinator: NSObject, Coordinator, MainCoordinatorProtocol {
         let coordinator = LoginCoordinator(navigationController: navigationController)
         self.childCoordinators.append(coordinator)
         coordinator.navigateSignUp()
+    }
+    
+    func navigatePDF(dto: PDFFileDto) {
+        let coordinator = FirstDetailViewCoordinator(navigationController: navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.navigatePDF(dto: dto)
     }
     
 }

@@ -2,7 +2,7 @@
 //  CategoryMealViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 4.06.2024.
+//  Created by Ö.Ş on 4.06.2024.
 //
 
 import UIKit
@@ -10,12 +10,18 @@ import Then
 import SnapKit
 import Kingfisher
 import UIView_Shimmer
+import PDFKit
 
 class CategoryMealViewController: UIViewController {
     
     var coordinator: FirstDetailViewCoordinatorProtocol?
     var categoryMealDto: CategoryMealDto?
     var mealDetail: MealDetailViewModel.MealDetailClearModel?
+    var ingredints = ""
+    var instructions = ""
+    var pdfData: Data!
+    
+    lazy private var pdfView = PDFView().then{ $0.autoScales = true }
     
     lazy private var indicator = customActivityIndicatorViewComponent()
     
@@ -116,8 +122,7 @@ class CategoryMealViewController: UIViewController {
         $0.font = .systemFont(ofSize: 16)
         $0.textColor = .darkGray
     }
-    
-    
+
     //Bu 4 component servisten beslenecek şimdilik burada configure edildi ancak ileride bu vc de bir configure methodu yazılıp her bir configure onun içinde yapılabilir.
     
     lazy private var stackGeneralView = UIView().then{
@@ -336,6 +341,7 @@ extension CategoryMealViewController: UICollectionViewDelegateFlowLayout, UIColl
                 cell.favoriteDto = FavoriteDto(mealId: mealId, imageURL: url, mealName: mealName)
             }
             cell.control()
+            cell.delegate = self
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryMealDetailCell.key, for: indexPath) as! CategoryMealDetailCell
@@ -346,7 +352,7 @@ extension CategoryMealViewController: UICollectionViewDelegateFlowLayout, UIColl
                 for number in 1...detail.strIngredients.count {
                     innerIngredients += "• \(detail.strIngredients[number - 1])\n"
                 }
-                
+                self.ingredints = innerIngredients
                 cell.configure(viewModel: CategoryMealDetailCell.ViewModel(
                     strIngredients: innerIngredients,
                     font: .systemFont(ofSize: 14, weight: .semibold),
@@ -415,7 +421,6 @@ extension CategoryMealViewController {
         
         guard let mealDetail = self.mealDetail else { return }
         
-        
         if button == youtubeButton {
              
             let youtube =  mealDetail.strYoutube
@@ -439,8 +444,6 @@ extension CategoryMealViewController {
             }
             
         }
-        
-        
         
         if button == ingredients {
             coordinator?.navigateCategoryMealIngredients(categoryMealIngredientsDto: CategoryMealIngredientsDto(strInstructions: mealDetail.strInstructions, youtubeURL: mealDetail.strYoutube))
@@ -468,10 +471,55 @@ extension CategoryMealViewController {
             }
         
         }
-        
-        
-    }
     
+    }
+
 }
 
+extension CategoryMealViewController: orderButton {
+    
+    func orderButtonTapped(dto: FavoriteDto) {
+        
+        let pdfCreator = PDFCreator()
+        
+        let url = URL(string: dto.imageURL)
+        let view = UIImageView()
+        view.kf.setImage(with: url)
+        guard let img = view.image,
+              let mealDetail = self.mealDetail
+        else { return }
+        
+        let pdfData = pdfCreator.createPDF(
+            logo: UIImage.restaurantLogo,
+            title: dto.mealName,
+            mainImage: img,
+            firstParagraph: mealDetail.strInstructions,
+            secondParagraph: self.ingredints
+        )
+        
+        self.pdfData = pdfData
+        
+        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("\(dto.mealName).pdf")
+               do {
+                   try pdfData.write(to: tempURL)
+               } catch {
+                   print("Could not save PDF file: \(error)")
+                   return
+               }
+        
+        let activityViewController = UIActivityViewController(activityItems: [tempURL], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+        
+        /*
+         //MARK: İsteğe bağlı olarak PDF dosyası gösterilebilir.
+         self.coordinator?.navigatePDF(dto: PDFFileDto(
+             mealName: dto.mealName,
+             mealImage: img,
+             instructions: mealDetail.strInstructions,
+             ingredients: self.ingredints
+         ))
+         */
+        
+    }
+}
 

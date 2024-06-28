@@ -2,7 +2,7 @@
 //  BasketSubscriptionViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 27.06.2024.
+//  Created by Ö.Ş on 27.06.2024.
 //
 
 import UIKit
@@ -157,7 +157,10 @@ extension BasketSubscriptionViewController {
             fontD: .systemFont(ofSize: 18),
             textColorD: .lightGray,
             componentRadius: 15,
-            componentBackgroundColor: .tabbarLocationView
+            componentBackgroundColor: .tabbarLocationView,
+            handleTap: {
+                print("1.")
+            }
         ))
         
         optionsSecond.configure(viewModel: paymentOptionsViewComponent.ViewModel(
@@ -171,7 +174,10 @@ extension BasketSubscriptionViewController {
             fontD: .systemFont(ofSize: 18),
             textColorD: .lightGray,
             componentRadius: 15,
-            componentBackgroundColor: .iconandIdentifierViewComponentColor1
+            componentBackgroundColor: .iconandIdentifierViewComponentColor1,
+            handleTap: {
+                print("2.")
+            }
         ))
     
     }

@@ -1,3 +1,11 @@
+//
+//  Cells.swift
+//  RestaurantMobilApp
+//
+//  Created by Ö.Ş on 10.06.2024.
+//
+
+
 import UIKit
 import SpreadsheetView
 

@@ -2,7 +2,7 @@
 //  FirstViewCoordinator.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 4.06.2024.
+//  Created by Ö.Ş on 4.06.2024.
 //
 
 import UIKit
@@ -35,6 +35,16 @@ final class FirstDetailViewCoordinator: Coordinator, FirstDetailViewCoordinatorP
         let vc = CategoryMealIngredientsViewController()
         vc.coordinator = self
         vc.mealIngredientsDto = categoryMealIngredientsDto
+        rootViewController = vc
+        navigationController.pushViewController(vc, animated: true)
+        
+    }
+    
+    func navigatePDF(dto: PDFFileDto) {
+        
+        let vc = PDFViewController()
+        vc.coordinator = self
+        vc.dto = dto
         rootViewController = vc
         navigationController.pushViewController(vc, animated: true)
         

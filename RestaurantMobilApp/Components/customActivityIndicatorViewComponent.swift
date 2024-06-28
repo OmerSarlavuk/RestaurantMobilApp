@@ -2,7 +2,7 @@
 //  customActivityIndicatorViewComponent.swift
 //  DenemeProje
 //
-//  Created by Ahlatci on 22.04.2024.
+//  Created by Ö.Ş on 22.04.2024.
 //
 
 import UIKit
