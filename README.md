@@ -18,7 +18,8 @@ Regardless of the restaurant, users can get recipes for meals or learn the ingre
 
 ## Video Tanıtım
 
-[![Video Açıklaması](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=LLAt8Ywuqi0)
+[![Video Açıklaması](https://img.youtube.com/vi/LLAt8Ywuqi0/0.jpg
+)](https://www.youtube.com/watch?v=LLAt8Ywuqi0)
 
 # Author
 
