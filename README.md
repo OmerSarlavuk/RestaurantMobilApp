@@ -15,13 +15,6 @@ Regardless of the restaurant, users can get recipes for meals or learn the ingre
 
 
 
-## App Screens
-
-![Ana Ekran](https://example.com/screenshot1.png)
-![Ayarlar Ekranı](https://example.com/screenshot2.png)
-
-
-
 ## Video Introduction
 
 [![Video Açıklaması](https://img.youtube.com/vi/LLAt8Ywuqi0/0.jpg
