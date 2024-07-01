@@ -45,6 +45,7 @@ Regardless of the restaurant, users can get recipes for meals or learn the ingre
 
 ## Data Encyrpt
 
+<img width="833" alt="Ekran Resmi 2024-07-01 17 14 25" src="https://github.com/OmerSarlavuk/RestaurantMobilApp/assets/124400683/841f10a3-3a2f-43cf-9e2f-84b54103d095">
 <img width="914" alt="Vigenere Table" src="https://github.com/OmerSarlavuk/RestaurantMobilApp/assets/124400683/f8b97488-b29f-4934-9860-e218fee16e7d">
 
 
