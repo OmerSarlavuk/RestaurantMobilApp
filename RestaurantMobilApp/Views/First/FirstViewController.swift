@@ -235,6 +235,10 @@ extension FirstViewController {
         isLoading = true
 //        print(UserDefaults.standard.dictionaryRepresentation())
         
+        let normalText  = "Smart Restaurant Application Encyrption Trial"
+        let encyrptText = EncodedDataAlgorithms().encryptText(text: normalText, key: EncyrptKEY.default)
+        let decyrptText = EncodedDataAlgorithms().decryptText(encryptedText: encyrptText, key: EncyrptKEY.default)
+        
     }
     
     
