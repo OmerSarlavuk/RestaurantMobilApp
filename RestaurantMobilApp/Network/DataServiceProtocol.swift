@@ -14,6 +14,10 @@ protocol DataServiceProtocol: AnyObject {
     func fetchCategoryNames(completion: @escaping (([CategoryName]) -> Void))
     func fetchMeals(category: String, completion: @escaping (([Meal]) -> Void))
     func fetchOpenAi(searchs: String, completion: @escaping ((String) -> Void))
+    func fetchUserbyUserEmail(userEmail: String, completion: @escaping ((UserServiceModel?, Bool, String?) -> Void))
+    func signUpNewUser(userPostDto: UserPostDto, completion: @escaping ((UserServiceModel?, Bool, String?) -> Void))
+    func fetchVerifyEmail(userEmail: String, completion: @escaping ((String, Bool, String?) -> Void))
+    func updateUser(userPutDto: UserPutDto, completion: @escaping ((UserServiceModel?, Bool, String?) -> Void))
     
 }
 

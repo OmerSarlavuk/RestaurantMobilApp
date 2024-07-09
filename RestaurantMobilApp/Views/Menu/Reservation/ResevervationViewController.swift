@@ -78,7 +78,7 @@ extension ResevervationViewController {
         spreadsheetView.register(DayTitleCell.self, forCellWithReuseIdentifier: String(describing: DayTitleCell.self))
         spreadsheetView.register(ScheduleCell.self, forCellWithReuseIdentifier: String(describing: ScheduleCell.self))
         
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Reservation"
         
         setupConstraints()

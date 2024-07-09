@@ -49,7 +49,7 @@ class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
     
     lazy private var favoriteView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.layer.cornerRadius = 18
         return view
     }()
@@ -68,7 +68,7 @@ class CategoryMealTopCell: UICollectionViewCell, ShimmeringViewProtocol {
     lazy private var orderView: UIView = {
         //View height-width values -> 50
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.layer.cornerRadius = 18
         return view
     }()

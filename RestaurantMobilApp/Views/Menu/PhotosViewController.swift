@@ -27,7 +27,7 @@ extension PhotosViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Photos"
     }
     

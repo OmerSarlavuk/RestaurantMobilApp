@@ -10,6 +10,7 @@ import SnapKit
 import Then
 import UIView_Shimmer
 import Kingfisher
+import Alamofire
 
 class FirstViewController: UIViewController {
 
@@ -67,9 +68,9 @@ class FirstViewController: UIViewController {
     }()
     
     
-    lazy private var item1: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .reservation, title: .StringContentinLocalizable.menuReservation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item1: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .reservation, title: .StringContentinLocalizable.menuReservation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -81,9 +82,9 @@ class FirstViewController: UIViewController {
         return item
     }()
     
-    lazy private var item2: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .location, title: .StringContentinLocalizable.menuLocation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item2: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .location, title: .StringContentinLocalizable.menuLocation.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -95,9 +96,9 @@ class FirstViewController: UIViewController {
         return item
     }()
     
-    lazy private var item3: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .photos, title: .StringContentinLocalizable.menuPhotos.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item3: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .photos, title: .StringContentinLocalizable.menuPhotos.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -109,9 +110,9 @@ class FirstViewController: UIViewController {
         return item
     }()
     
-    lazy private var item4: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .favorite, title: .StringContentinLocalizable.menuFavorites.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item4: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .favorite, title: .StringContentinLocalizable.menuFavorites.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -123,9 +124,9 @@ class FirstViewController: UIViewController {
         return item
     }()
     
-    lazy private var item5: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .help, title: .StringContentinLocalizable.menuAbout.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item5: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .help, title: .StringContentinLocalizable.menuAbout.localised, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -137,14 +138,14 @@ class FirstViewController: UIViewController {
         return item
     }()
     
-    lazy private var item6: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
+    lazy private var item6: menuItemViewComponent = {
+       let item = menuItemViewComponent()
         return item
     }()
     
-    lazy private var item7: MenuItemViewComponent = {
-       let item = MenuItemViewComponent()
-        item.configure(viewModel: MenuItemViewComponent.ViewModel(icon: .basket, title: "Basket", font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+    lazy private var item7: menuItemViewComponent = {
+       let item = menuItemViewComponent()
+        item.configure(viewModel: menuItemViewComponent.ViewModel(icon: .basket, title: "Basket", font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             self.addIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + self.time) { [weak self] in
                 guard let self = self else { return }
@@ -172,8 +173,8 @@ class FirstViewController: UIViewController {
     }()
     
     
-    private func createMenuItem() -> MenuItemViewComponent {
-        return MenuItemViewComponent()
+    private func createMenuItem() -> menuItemViewComponent {
+        return menuItemViewComponent()
     }
     
     lazy private var menu: UIButton = {
@@ -233,11 +234,46 @@ extension FirstViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
+        
 //        print(UserDefaults.standard.dictionaryRepresentation())
         
-        let normalText  = "Smart Restaurant Application Encyrption Trial"
-        let encyrptText = EncodedDataAlgorithms().encryptText(text: normalText, key: EncyrptKEY.default)
-        let decyrptText = EncodedDataAlgorithms().decryptText(encryptedText: encyrptText, key: EncyrptKEY.default)
+//        let normalText  = "swiftdenemekullanicisid"
+//        let encyrptText = EncodedDataAlgorithms().encryptText(text: normalText, key: EncyrptKEY.default)
+//        print("enc -> \(encyrptText)")
+//        let decyrptText = EncodedDataAlgorithms().decryptText(encryptedText: "---encyrpt---", key: EncyrptKEY.default)
+//        print("dc -> \(decyrptText)")
+        
+        
+//        DataService().fetchUsers { users in
+//            users.forEach{
+//                print("user -> \($0)")
+//            }
+//        }
+        
+//        AF.request("http://127.0.0.1:8000/getUserbyuserEmail?userEmail=Deneme@gmail.com", method: .get).response { response in
+//
+//            if let data = response.data {
+//                
+//                do {
+//                    let cevap = try JSONDecoder().decode(ResponseBody<UserServiceModel>.self, from: data)
+//                    
+//                    
+//                    if let result = cevap.data {
+//                        print("data -> \(result.UserEmail)")
+//                    } else {
+//                        print("if let result else")
+//                    }
+//                    
+//                } catch {
+//                    print("catch -> \(error.localizedDescription)")
+//                }
+//                
+//            } else {
+//                print("dış if let else -> \(response.error!.localizedDescription)")
+//            }
+//            
+//        }
+        
         
     }
     
@@ -270,7 +306,7 @@ extension FirstViewController {
             item7.removeFromSuperview()
         }
         
-        item6.configure(viewModel: MenuItemViewComponent.ViewModel(icon: icon, title: text, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
+        item6.configure(viewModel: menuItemViewComponent.ViewModel(icon: icon, title: text, font: .systemFont(ofSize: 16), textColor: .menuItemTitle, handleTap: {
             
             if text != "Login" {
                 LocalDataBaseProcess().removeDATA(key: "isLogin")
@@ -288,7 +324,7 @@ extension FirstViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.addSubview(menu)
         view.addSubview(searchBar)
         view.addSubview(ai)

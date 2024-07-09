@@ -49,6 +49,43 @@ extension UIView {
         viewController.didMove(toParent: duringViewController.self)
     }
     
+    func showErrorMessage(viewModel: infoandOkeyActionViewComponent.ViewModel) {
+        
+        let visualView = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterialLight))
+        let alert = infoandOkeyActionViewComponent()
+        
+        self.addSubview(visualView)
+        visualView.contentView.addSubview(alert)
+        
+        visualView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        alert.snp.makeConstraints{
+            $0.centerX.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(48)
+            $0.trailing.equalToSuperview().offset(-48)
+            $0.height.equalTo(200)
+        }
+        
+        alert.configure(viewModel: infoandOkeyActionViewComponent.ViewModel(
+            image:  viewModel.image,
+            info: viewModel.info,
+            textAligment: viewModel.textAligment,
+            textColor: viewModel.textColor,
+            font: viewModel.font,
+            buttonTitle: viewModel.buttonTitle,
+            buttonTitleColor: viewModel.buttonTitleColor,
+            cornerRadius: viewModel.cornerRadius,
+            backgroundColor: viewModel.backgroundColor,
+            action: { state in
+                if state {
+                    visualView.removeFromSuperview()
+                }
+            }))
+
+    }
+    
 }
 
 private struct AssociatedKeys {

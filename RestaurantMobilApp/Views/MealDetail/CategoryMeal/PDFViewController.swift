@@ -37,7 +37,7 @@ extension PDFViewController {
             target: self,
             action: #selector(shareButtonTapped)
         )
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
     }
     
     

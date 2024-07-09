@@ -49,7 +49,7 @@ class BasketViewController: UIViewController {
     
     lazy private var tabView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         return view
     }()
     
@@ -96,7 +96,7 @@ extension BasketViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "My Basket"
         fetchData()
     }

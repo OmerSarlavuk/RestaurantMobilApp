@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class MenuItemViewComponent: UIView {
+class menuItemViewComponent: UIView {
     
     
     lazy private var icon: UIImageView = {
@@ -57,7 +57,7 @@ class MenuItemViewComponent: UIView {
     
 }
 
-extension MenuItemViewComponent {
+extension menuItemViewComponent {
     
     private func setupUI() {
         addSubview(icon)

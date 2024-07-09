@@ -42,12 +42,12 @@ class AiViewController: UIViewController {
         return view
     }()
     
-    lazy private var comp1 = LabelandGeneralViewComponent().then{
-        $0.configure(viewModel: LabelandGeneralViewComponent.ViewModel(content: "By entering at least 3 ingredients, you can create a meal, dessert, drink, etc. recommended by GF Chat. You can get suggestion.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
+    lazy private var comp1 = labelandGeneralViewComponent().then{
+        $0.configure(viewModel: labelandGeneralViewComponent.ViewModel(content: "By entering at least 3 ingredients, you can create a meal, dessert, drink, etc. recommended by GF Chat. You can get suggestion.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
     }
     
-    lazy private var comp2 = LabelandGeneralViewComponent().then{
-        $0.configure(viewModel: LabelandGeneralViewComponent.ViewModel(content: "If you wish, you can upload a picture of any drink, meal or dessert type and see the ingredients to be used.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
+    lazy private var comp2 = labelandGeneralViewComponent().then{
+        $0.configure(viewModel: labelandGeneralViewComponent.ViewModel(content: "If you wish, you can upload a picture of any drink, meal or dessert type and see the ingredients to be used.", font: .systemFont(ofSize: 16), textColor: .darkGray, aligment: .center, borderWith: 0.4, radius: 15, borderColor: UIColor.lightGray.cgColor))
     }
     
     lazy private var aiImage = UIImageView().then{
@@ -116,7 +116,7 @@ class AiViewController: UIViewController {
     
     private func setupUI() {
         self.navigationItem.title = "GF Chat"
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.addSubview(scrollView)
         scrollView.addSubview(scrollContentView)
         scrollContentView.addSubview(logo)

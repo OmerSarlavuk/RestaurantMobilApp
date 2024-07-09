@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class TitleandValueViewComponent: UIView {
+class titleandValueViewComponent: UIView {
     
     
     lazy private var title: UILabel = {
@@ -58,7 +58,7 @@ class TitleandValueViewComponent: UIView {
     
 }
 
-extension TitleandValueViewComponent {
+extension titleandValueViewComponent {
     
     
     private func setupUI() {

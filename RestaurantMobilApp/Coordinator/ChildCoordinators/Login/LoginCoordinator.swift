@@ -13,6 +13,7 @@ final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
+    let dataService = DataService()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -23,7 +24,7 @@ final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
     
     func navigateForgetPassword() {
         
-        let vc = ForgetPasswordViewController()
+        let vc = ForgetPasswordViewController(dataService: dataService)
         vc.coordinator = self
         rootViewController = vc
         navigationController.pushViewController(vc, animated: true)

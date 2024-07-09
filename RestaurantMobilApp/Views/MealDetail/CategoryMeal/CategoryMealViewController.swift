@@ -43,7 +43,7 @@ class CategoryMealViewController: UIViewController {
     
     lazy private var tabbarView: UIView = {
        let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         return view
     }()
     
@@ -140,27 +140,27 @@ class CategoryMealViewController: UIViewController {
         return sw
     }()
     
-    lazy private var titleAndValueComponent1: TitleandValueViewComponent = {
-       let comp = TitleandValueViewComponent()
-        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "CALORIES", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "155 kcal", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+    lazy private var titleAndValueComponent1: titleandValueViewComponent = {
+       let comp = titleandValueViewComponent()
+        comp.configure(viewModel: titleandValueViewComponent.ViewModel(title: "CALORIES", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "155 kcal", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
         return comp
     }()
     
-    lazy private var titleAndValueComponent2: TitleandValueViewComponent = {
-       let comp = TitleandValueViewComponent()
-        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "CARBS", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "16 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+    lazy private var titleAndValueComponent2: titleandValueViewComponent = {
+       let comp = titleandValueViewComponent()
+        comp.configure(viewModel: titleandValueViewComponent.ViewModel(title: "CARBS", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "16 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
         return comp
     }()
     
-    lazy private var titleAndValueComponent3: TitleandValueViewComponent = {
-       let comp = TitleandValueViewComponent()
-        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "FAT", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "9 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+    lazy private var titleAndValueComponent3: titleandValueViewComponent = {
+       let comp = titleandValueViewComponent()
+        comp.configure(viewModel: titleandValueViewComponent.ViewModel(title: "FAT", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "9 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
         return comp
     }()
     
-    lazy private var titleAndValueComponent4: TitleandValueViewComponent = {
-       let comp = TitleandValueViewComponent()
-        comp.configure(viewModel: TitleandValueViewComponent.ViewModel(title: "PROTEIN", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "4 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
+    lazy private var titleAndValueComponent4: titleandValueViewComponent = {
+       let comp = titleandValueViewComponent()
+        comp.configure(viewModel: titleandValueViewComponent.ViewModel(title: "PROTEIN", titleFont: .boldSystemFont(ofSize: 12), titleTextColor: .iconandIdentifierViewComponentColor1, titleTextAligment: .left, value: "4 g", valueFont: .systemFont(ofSize: 12), valueTextColor: .darkGray, valueTextAligment: .left))
         return comp
     }()
     
@@ -227,7 +227,7 @@ extension CategoryMealViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.addSubview(collectionView)
         view.addSubview(tabbarView)
         view.addSubview(favoriteRed)

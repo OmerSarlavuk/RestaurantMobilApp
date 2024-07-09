@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 
-class LabelandGeneralViewComponent: UIView {
+class labelandGeneralViewComponent: UIView {
     
     lazy private var content = UILabel().then{
         $0.numberOfLines = 0
@@ -50,7 +50,7 @@ class LabelandGeneralViewComponent: UIView {
     
 }
 
-extension LabelandGeneralViewComponent {
+extension labelandGeneralViewComponent {
     
     private func setupUI() {
         addSubview(content)

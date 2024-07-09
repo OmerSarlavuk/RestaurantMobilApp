@@ -16,4 +16,15 @@ class ResponseBodyMeals<T: Codable>: Codable {
     let meals: [T]
 }
 
+class ResponseBodyUsers: Codable {
+    let data: UserServiceModel?
+    let message: String
+    let code: Int
+}
+
+class ResponseBody<T: Codable>: Codable {
+    let data: T?
+    let message: String
+    let code: Int
+}
 

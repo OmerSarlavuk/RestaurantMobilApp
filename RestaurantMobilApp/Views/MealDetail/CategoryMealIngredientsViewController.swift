@@ -72,7 +72,7 @@ class CategoryMealIngredientsViewController: UIViewController {
     private func configure() {
         guard let dto = self.mealIngredientsDto else { return }
 
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Prepare Of"
         // MARK: webview youtube video load
         let url = URL(string: dto.youtubeURL)
@@ -82,8 +82,8 @@ class CategoryMealIngredientsViewController: UIViewController {
         let steps = dto.strInstructions.split(separator: "\r\n")
 
         for number in 1...steps.count {
-            var comp = InstructionsStepViewComponent()
-            comp = self.sendComponent(viewModel: InstructionsStepViewComponent.ViewModel(
+            var comp = instructionsStepViewComponent()
+            comp = self.sendComponent(viewModel: instructionsStepViewComponent.ViewModel(
                 title: "Step \(number)",
                 textColor: .black,
                 font: .boldSystemFont(ofSize: 20),
@@ -110,8 +110,8 @@ class CategoryMealIngredientsViewController: UIViewController {
         }
     }
 
-    private func sendComponent(viewModel: InstructionsStepViewComponent.ViewModel) -> InstructionsStepViewComponent {
-        let comp = InstructionsStepViewComponent()
+    private func sendComponent(viewModel: instructionsStepViewComponent.ViewModel) -> instructionsStepViewComponent {
+        let comp = instructionsStepViewComponent()
         comp.configure(viewModel: viewModel)
         return comp
     }

@@ -59,7 +59,7 @@ extension LocationViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Location"
         mapView = GMSMapView()
         self.mapView.mapStyle(withFilename: "darkMap", andType: "json")

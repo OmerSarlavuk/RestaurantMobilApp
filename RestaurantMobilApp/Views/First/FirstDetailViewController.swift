@@ -94,7 +94,7 @@ extension FirstDetailViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         view.addSubview(collectionView)
         setupConstraints()
         setupSearchController()

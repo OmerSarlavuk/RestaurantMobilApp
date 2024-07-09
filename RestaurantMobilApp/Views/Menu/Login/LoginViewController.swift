@@ -145,7 +145,7 @@ extension LoginViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Login"
     }
     
@@ -304,8 +304,7 @@ extension LoginViewController {
                       let gn = givenName,
                       let on = familyName
                 else { return }
-                
-                debugPrint("fullName: \(fn), emailAddress: \(ea), givenName: \(gn), familyName: \(on)")
+            
                 //MARK: Burada bizim kontrollerimizden geçip servisten gelen kullanıcı verisi ile kıyaslanmalı ona göre geçtirilmeli
                 
                 self.addIndicator()
@@ -320,24 +319,45 @@ extension LoginViewController {
         }
         
         if button == login {
+            let algorithm = EncodedDataAlgorithms()
+            let key = EncyrptKEY.default
             
-            guard let _ = self.emailTextField.text,
+            guard let userEmail = self.emailTextField.text,
                   let password = self.passwordTextField.text
             else { return }
         
-            let algorithm = EncodedDataAlgorithms()
-            let key = EncyrptKEY.default
-            let encodeText = algorithm.encryptText(text: password, key: key)
-            let decodeText = algorithm.decryptText(encryptedText: encodeText, key: key)
+            var decodeText = ""
             
-            print("password -> \(password)\nencode -> \(encodeText)\ndecode -> \(decodeText)")
-            
-            self.addIndicator()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
-                guard let self = self else { return }
-                self.indicator.removeFromSuperview()
-                LocalDataBaseProcess().setDATA(value: "login", key: "isLogin")
-                self.navigationController?.popViewController(animated: true)
+            DataService().fetchUserbyUserEmail(userEmail: userEmail) { user, state, message  in
+                
+                if let userModel = user {
+                    
+                    decodeText = algorithm.decryptText(encryptedText: userModel.UserPassword, key: key)
+                    
+                    if password == decodeText {
+                        
+                        self.addIndicator()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+                            guard let self = self else { return }
+                            self.indicator.removeFromSuperview()
+                            LocalDataBaseProcess().setDATA(value: "login", key: "isLogin")
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                    } else {
+                        
+                        self.showErrorMessage(message: "Check your password and try entering it again.")
+                        //Burada hata gösterimi yapılmalı kullanıcıya ilgi verilmeli. Buradaki olay şifreler eşleşmiyor.
+
+                    }
+                    
+                    
+                } else {
+                    
+                    self.showErrorMessage(message: "Please check your email and re-enter your email registered in the system.")
+                    //Burada kullanıcı bulunamadığında bir uyarı gösterilmelidir.
+                }
+                
             }
             
         }
@@ -352,6 +372,43 @@ extension LoginViewController {
     
     }
     
-}
+    private func showErrorMessage(message: String) {
+        
+        let visualView = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterialLight))
+        let alert = infoandOkeyActionViewComponent()
+        
+        view.addSubview(visualView)
+        visualView.contentView.addSubview(alert)
+        
+        visualView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        alert.snp.makeConstraints{
+            $0.centerX.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().offset(48)
+            $0.trailing.equalToSuperview().offset(-48)
+            $0.height.equalTo(200)
+        }
+        
+        alert.configure(viewModel: infoandOkeyActionViewComponent.ViewModel(
+            image: .alertInformation,
+            info: message,
+            textAligment: .center,
+            textColor: .black,
+            font: .boldSystemFont(ofSize: 16),
+            buttonTitle: "Okey",
+            buttonTitleColor: .goodFood,
+            cornerRadius: 20,
+            backgroundColor: .white,
+            action: { state in
+                if state {
+                    visualView.removeFromSuperview()
+                }
+            }
+        ))
 
+    }
+    
+}
 

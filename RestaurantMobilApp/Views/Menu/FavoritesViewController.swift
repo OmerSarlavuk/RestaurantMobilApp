@@ -58,7 +58,7 @@ extension FavoritesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "Favorites"
         isLoading = true
         addIndicator()

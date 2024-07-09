@@ -106,7 +106,7 @@ extension AboutViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .themePrimary
         self.navigationItem.title = "About"
         view.addSubview(logo)
         view.addSubview(scrollView)

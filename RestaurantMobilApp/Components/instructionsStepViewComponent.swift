@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class InstructionsStepViewComponent: UIView {
+class instructionsStepViewComponent: UIView {
     
     lazy private var title: UILabel = {
         let label = UILabel()
