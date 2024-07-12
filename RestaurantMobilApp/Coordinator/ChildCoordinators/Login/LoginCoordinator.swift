@@ -33,7 +33,7 @@ final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
     
     func navigateSignUp() {
      
-        let vc = SignUpViewController()
+        let vc = SignUpViewController(dataService: dataService)
         vc.coordinator = self
         rootViewController = vc
         navigationController.pushViewController(vc, animated: true)

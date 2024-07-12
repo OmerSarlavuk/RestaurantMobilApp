@@ -17,12 +17,6 @@ class FirstDetailViewController: UIViewController {
     var meals = [Meal]()
     private var filteredCategories = [Meal]()
     var firstDetailDto: FirstDetailDto?
-
-//    lazy private var searchBar: UISearchBar = {
-//       let sb = UISearchBar()
-//        sb.delegate = self
-//        return sb
-//    }()
     
     lazy private var searchController = UISearchController(searchResultsController: nil)
     

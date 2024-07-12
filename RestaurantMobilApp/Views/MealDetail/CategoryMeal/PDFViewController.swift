@@ -2,7 +2,7 @@
 //  PDFViewController.swift
 //  RestaurantMobilApp
 //
-//  Created by Ahlatci on 28.06.2024.
+//  Created by Ö.Ş on 28.06.2024.
 //
 
 import UIKit

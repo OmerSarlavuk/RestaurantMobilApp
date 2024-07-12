@@ -16,10 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let signInConfig = "191109498785-5rle8csqhgnunv94q3lgmo2ndp659q7b.apps.googleusercontent.com"
 
 
-    func application(
-      _ app: UIApplication,
-      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
-    ) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
       var handled: Bool
 
       handled = GIDSignIn.sharedInstance.handle(url)

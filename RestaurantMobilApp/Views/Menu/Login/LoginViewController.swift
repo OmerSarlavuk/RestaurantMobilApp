@@ -299,10 +299,10 @@ extension LoginViewController {
 
 //                let profilePicUrl = user.profile?.imageURL(withDimension: 320) Varsa profil fotosu
                 
-                guard let fn = fullName,
-                      let ea = emailAddress,
-                      let gn = givenName,
-                      let on = familyName
+                guard let _ = fullName,
+                      let _ = emailAddress,
+                      let _ = givenName,
+                      let _ = familyName
                 else { return }
             
                 //MARK: Burada bizim kontrollerimizden geçip servisten gelen kullanıcı verisi ile kıyaslanmalı ona göre geçtirilmeli

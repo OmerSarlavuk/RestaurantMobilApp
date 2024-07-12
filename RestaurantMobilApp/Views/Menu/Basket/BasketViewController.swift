@@ -179,11 +179,6 @@ extension BasketViewController {
                     
                     meals.forEach{
                         
-                        //Bura güncellenecek burası addedBaskette eklenen keylere göre çekeceğiz.
-                        //Ona göre de gelen veriyi parçalayacağız.
-                        //Mesela "\($0.strMeal)basket" gibi orada atadığımız keye göre çekeceğiz
-                        //Gelecek olan veri içerisinde imageURL ve mealName lazım sadece
-                        
                         let check = local.getDATA(key: "\($0.strMeal)basket")
                         
                         if !check.isEmpty {
@@ -310,5 +305,4 @@ extension BasketViewController: sendValue {
     @objc private func didButtonTapped() { coordinator?.navigateBasketSubscription() }
 
 }
-
 

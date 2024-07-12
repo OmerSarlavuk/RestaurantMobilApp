@@ -23,7 +23,6 @@ extension UIView {
         handler()
     }
     
-    
     func tabbarAnimate() {
         let transition = CATransition()
         transition.duration = 0.2

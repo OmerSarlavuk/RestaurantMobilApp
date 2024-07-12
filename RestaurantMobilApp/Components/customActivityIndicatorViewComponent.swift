@@ -50,7 +50,7 @@ class customActivityIndicatorViewComponent : UIView {
 
 
     func stopAnimation() {
-        loaderImage.layer.removeAllAnimations()
+        loaderImage.removeFromSuperview()
     }
     
 }

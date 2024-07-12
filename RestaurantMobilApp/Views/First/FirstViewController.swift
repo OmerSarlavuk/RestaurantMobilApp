@@ -234,6 +234,12 @@ extension FirstViewController {
         super.viewDidLoad()
         setupUI()
         isLoading = true
+    
+//        view.setIndicator(isStart: true)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+//            self.view.setIndicator(isStart: false)
+//        }
+        
         
 //        print(UserDefaults.standard.dictionaryRepresentation())
         
@@ -242,37 +248,6 @@ extension FirstViewController {
 //        print("enc -> \(encyrptText)")
 //        let decyrptText = EncodedDataAlgorithms().decryptText(encryptedText: "---encyrpt---", key: EncyrptKEY.default)
 //        print("dc -> \(decyrptText)")
-        
-        
-//        DataService().fetchUsers { users in
-//            users.forEach{
-//                print("user -> \($0)")
-//            }
-//        }
-        
-//        AF.request("http://127.0.0.1:8000/getUserbyuserEmail?userEmail=Deneme@gmail.com", method: .get).response { response in
-//
-//            if let data = response.data {
-//                
-//                do {
-//                    let cevap = try JSONDecoder().decode(ResponseBody<UserServiceModel>.self, from: data)
-//                    
-//                    
-//                    if let result = cevap.data {
-//                        print("data -> \(result.UserEmail)")
-//                    } else {
-//                        print("if let result else")
-//                    }
-//                    
-//                } catch {
-//                    print("catch -> \(error.localizedDescription)")
-//                }
-//                
-//            } else {
-//                print("dış if let else -> \(response.error!.localizedDescription)")
-//            }
-//            
-//        }
         
         
     }
@@ -366,7 +341,6 @@ extension FirstViewController {
     
     @objc private func didButtonTapped(_ button: UIButton) {
         
-        
         if button == menu {
             showMenu()
             self.view.endEditing(true)
@@ -387,6 +361,10 @@ extension FirstViewController {
     private func enableMenuViewInteraction() {
         parentView.addGestureRecognizer(gesture)
     }
+    
+    
+    // !!!!!!!!!!!!!!----------------!!!!!!!!!!!!!!!
+    //MARK: BURAYI ViewModel tarafında halletmeye çalışmak gerekir. Protocol uygulanıp liste o şekilde doldurulabilir.
     
     private func fetchCategories() {
         let dataService = DataService()
@@ -554,6 +532,7 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         }
     }
 }
+
 extension FirstViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
